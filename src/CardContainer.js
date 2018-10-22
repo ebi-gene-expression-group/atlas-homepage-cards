@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import SpeciesCard from './SpeciesCard'
 import URI from 'urijs'
 
+// A mapping of card types and their associated React component
+const cardTypeComponent = {
+  'species' : SpeciesCard
+}
+
 class CardContainer extends React.Component {
   constructor(props) {
     super(props)
@@ -56,23 +61,25 @@ class CardContainer extends React.Component {
   render() {
     const { data, loading } = this.state
 
+    const cards = data && data.map((card) => {
+      const Card = cardTypeComponent[card.iconType]
+
+      return Card ?
+        <Card iconSrc={card.iconSrc}
+          description={card.iconDescription}
+          content={card.content}
+          key={card.iconSrc}/> :
+        null
+    })
+
     return (
       loading ?
         <p> Loading, please wait...</p> :
-        data && data.length > 0 ?
-          <div id="by-species">
-            <div className="row small-up-2 medium-up-3">
-              {data.map((species) =>
-                <SpeciesCard
-                  species={species.iconSrc}
-                  description={species.iconDescription}
-                  content={species.content}
-                  key={species.iconSrc}
-                />
-              )}
-            </div>
+        data.length > 0 ?
+          <div className="row small-up-2 medium-up-3">
+            { cards }
           </div> :
-          <p> There are no species.</p>
+          null
     )
   }
 }
