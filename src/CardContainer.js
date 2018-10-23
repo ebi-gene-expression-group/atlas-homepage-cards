@@ -35,13 +35,13 @@ class CardContainer extends React.Component {
 
     this.state = {
       data: null,
-      loading: true,
-      error: null
+      isLoading: true,
+      hasError: null
     }
   }
 
   async componentDidMount() {
-    this.setState({ loading: true })
+    this.setState({ isLoading: true })
 
     const url = URI(this.props.resource, this.props.host).toString()
 
@@ -54,14 +54,14 @@ class CardContainer extends React.Component {
 
       this.setState({
         data: await response.json(),
-        loading: false,
-        error: null
+        isLoading: false,
+        hasError: null
       })
     } catch(e) {
       this.setState({
         data: null,
-        loading: false,
-        error: {
+        isLoading: false,
+        hasError: {
           description: `There was a problem communicating with the server. Please try again later.`,
           name: e.name,
           message: e.message
@@ -72,7 +72,7 @@ class CardContainer extends React.Component {
 
   componentDidCatch(error, info) {
     this.setState({
-      error: {
+      hasError: {
         description: `There was a problem rendering this component.`,
         name: error.name,
         message: `${error.message} – ${info}`
@@ -81,7 +81,7 @@ class CardContainer extends React.Component {
   }
 
   render() {
-    const { data, loading, error } = this.state
+    const { data, isLoading, hasError } = this.state
 
     const cards = data && data.map((card) => {
       const Card = cardTypeComponent[card.iconType]
@@ -95,10 +95,10 @@ class CardContainer extends React.Component {
     })
 
     return (
-      loading ?
-        <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
-        error ?
-          <CalloutAlert error={error} /> :
+      hasError ?
+        <CalloutAlert error={hasError} /> :
+        isLoading ?
+          <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
           data.length > 0 ?
             <div className={`row small-up-2 medium-up-3`}>
               { cards }
