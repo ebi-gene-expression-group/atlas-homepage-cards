@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SpeciesCard With no data matches snapshot 1`] = `
+exports[`SpeciesCard with no data matches snapshot 1`] = `
 <div
   className="column column-block text-center combo card"
   style={

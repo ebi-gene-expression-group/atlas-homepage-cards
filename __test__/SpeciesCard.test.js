@@ -10,12 +10,12 @@ import SpeciesCard from '../src/SpeciesCard.js'
 Enzyme.configure({ adapter: new Adapter() })
 
 describe(`SpeciesCard`, () => {
-  test(`With no data matches snapshot`, () => {
+  test(`with no data matches snapshot`, () => {
     const tree = renderer.create(<SpeciesCard iconSrc={``}/>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
-  test(`Does not render optional empty content`, () => {
+  test(`does not render optional empty content`, () => {
     const wrapper = shallow(<SpeciesCard iconSrc={``} />)
 
     expect(wrapper.find(EbiSpeciesIcon).exists()).toBe(true)
@@ -23,7 +23,7 @@ describe(`SpeciesCard`, () => {
     expect(wrapper.find(`.content`).exists()).toBe(false)
   })
 
-  test(`Does not render non-existent URLs`, () => {
+  test(`does not render non-existent URLs`, () => {
     const content = [
       {
         text: `120 experiments`
@@ -48,7 +48,7 @@ describe(`SpeciesCard`, () => {
     expect(contentWrapper.find(`#url`).exists()).toBe(false)
   })
 
-  test(`Renders URLs`, () => {
+  test(`renders URLs`, () => {
     const content = [
       {
         text: `120 experiments`,
