@@ -4,8 +4,8 @@ import EbiSpeciesIcon from 'react-ebi-species'
 
 const SpeciesCard = ({iconSrc, description, content}) => {
   return (
-    <div className="column column-block text-center combo card" style={{marginBottom:0, paddingBottom: `25px`}}>
-      <span className="species-icon" style={{fontSize: `600%`}}>
+    <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
+      <span className={`species-icon`} style={{fontSize: `600%`}}>
         <EbiSpeciesIcon species={iconSrc}/>
       </span>
 
@@ -19,8 +19,8 @@ const SpeciesCard = ({iconSrc, description, content}) => {
             {
               content.map((item) =>
                 item.url ?
-                  <p id="url" style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></p> :
-                  <p id="text" style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</p>
+                  <p id={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></p> :
+                  <p id={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</p>
               )
             }
           </span>
