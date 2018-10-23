@@ -8,6 +8,27 @@ const cardTypeComponent = {
   'species' : SpeciesCard
 }
 
+const CalloutAlert = ({error}) =>
+  <div className={`row column`}>
+    <div className={`callout alert small`}>
+      <h5>Oops!</h5>
+      <p>
+        {error.description}<br/>
+        If the error persists, in order to help us debug the issue, please copy the URL and this message and
+        send it to us via <a href={`https://www.ebi.ac.uk/support/gxasc`}>the EBI Support & Feedback system</a>:
+      </p>
+      <code>{`${error.name}: ${error.message}`}</code>
+    </div>
+  </div>
+
+CalloutAlert.propTypes = {
+  error: PropTypes.shape({
+    description: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    message: PropTypes.string.isRequired
+  })
+}
+
 class CardContainer extends React.Component {
   constructor(props) {
     super(props)
@@ -23,9 +44,10 @@ class CardContainer extends React.Component {
     this.setState({ loading: true })
 
     const url = URI(this.props.resource, this.props.host).toString()
-    const response = await fetch(url)
 
     try {
+      const response = await fetch(url)
+
       if (!response.ok) {
         throw new Error(`${url} => ${response.status}`)
       }
@@ -59,7 +81,7 @@ class CardContainer extends React.Component {
   }
 
   render() {
-    const { data, loading } = this.state
+    const { data, loading, error } = this.state
 
     const cards = data && data.map((card) => {
       const Card = cardTypeComponent[card.iconType]
@@ -74,19 +96,21 @@ class CardContainer extends React.Component {
 
     return (
       loading ?
-        <p> Loading, please wait...</p> :
-        data.length > 0 ?
-          <div className="row small-up-2 medium-up-3">
-            { cards }
-          </div> :
-          null
+        <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
+        error ?
+          <CalloutAlert error={error} /> :
+          data.length > 0 ?
+            <div className={`row small-up-2 medium-up-3`}>
+              { cards }
+            </div> :
+            null
     )
   }
 }
 
 CardContainer.propTypes = {
-  host: PropTypes.string,
-  resource: PropTypes.string
+  host: PropTypes.string.isRequired,
+  resource: PropTypes.string.isRequired
 }
 
 export default CardContainer
