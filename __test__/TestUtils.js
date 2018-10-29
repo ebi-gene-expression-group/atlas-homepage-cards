@@ -30,6 +30,26 @@ const dummyCards = () => {
       ]
     },
     {
+      iconType: `experiments`,
+      iconSrc: `http://www.lingyun.com`,
+      iconDescription: `Mus musculus`,
+      content: [
+        {
+          text: `4 experiments`,
+        }
+      ]
+    },
+    {
+      iconType: `experiments`,
+      iconSrc: `http://www.zhao.com`,
+      iconDescription: `Homo sapiens`,
+      content: [
+        {
+          text: `2 experiments`,
+        }
+      ]
+    },
+    {
       iconType: `image`,
       iconSrc: `logo-goes-here`,
       iconDescription: `An image card`,
