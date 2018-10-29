@@ -1,19 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SpeciesCard from './SpeciesCard'
+import ExperimentCard from './ExperimentCard'
 import URI from 'urijs'
 
 // A mapping of card types and their associated React component
-const renderCardTypeComponent = (card) => {
-  switch (card.iconType) {
-  case `species`:
-    return <SpeciesCard iconSrc={card.iconSrc}
-      description={card.iconDescription}
-      content={card.content}
-      key={card.iconSrc}/>
-  default:
-    return null
-  }
+const cardTypeComponent = {
+  'species' : SpeciesCard,
+  'experiments' : ExperimentCard
 }
 
 const CalloutAlert = ({error}) =>
@@ -92,7 +86,14 @@ class CardContainer extends React.Component {
     const { data, isLoading, hasError } = this.state
 
     const cards = data && data.map((card) => {
-      return renderCardTypeComponent(card)
+      const Card = cardTypeComponent[card.iconType]
+
+      return Card ?
+        <Card iconSrc={card.iconSrc}
+          description={card.iconDescription}
+          content={card.content}
+          key={card.iconSrc}/> :
+        null
     })
 
     return (
