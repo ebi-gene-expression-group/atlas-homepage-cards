@@ -1,13 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import SpeciesCard from './SpeciesCard'
-import ExperimentCard from './ExperimentCard'
+import ImageCard from './ImageCard'
 import URI from 'urijs'
 
 // A mapping of card types and their associated React component
 const cardTypeComponent = {
   'species' : SpeciesCard,
-  'experiments' : ExperimentCard
+  'experiments' : ImageCard
 }
 
 const CalloutAlert = ({error}) =>

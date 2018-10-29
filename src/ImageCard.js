@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ExperimentCard = ({iconSrc, description, content}) => {
+const ImageCard = ({iconSrc, description, content}) => {
   return (
     <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
       <span className={`species-icon`} style={{fontSize: `600%`}}>
-        <img src={iconSrc}/>
+        <img id={`icon`} alt={description} src={iconSrc}/>
       </span>
 
       {
@@ -28,7 +28,7 @@ const ExperimentCard = ({iconSrc, description, content}) => {
   )
 }
 
-ExperimentCard.propTypes = {
+ImageCard.propTypes = {
   iconSrc: PropTypes.string.isRequired,
   description: PropTypes.string,
   content: PropTypes.arrayOf(PropTypes.shape({
@@ -37,4 +37,4 @@ ExperimentCard.propTypes = {
   }))
 }
 
-export default ExperimentCard
+export default ImageCard
