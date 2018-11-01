@@ -19,8 +19,10 @@ const SpeciesCard = ({iconSrc, description, content}) => {
             {
               content.map((item) =>
                 item.url ?
-                  <p id={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></p> :
-                  <p id={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</p>
+                  <p id={`url`} style={{marginBottom: `5px`}} key={item.text}>
+                    <a href={item.url} key={item.text}>{item.text}</a>
+                  </p> :
+                  <p id={`text`} style={{marginBottom: `5px`}} key={item.text}>{item.text}</p>
               )
             }
           </span>
