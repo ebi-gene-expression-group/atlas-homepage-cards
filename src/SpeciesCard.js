@@ -10,12 +10,12 @@ const SpeciesCard = ({iconSrc, description, content}) => {
       </span>
 
       {
-        description && <h5 className="species-name">{description}</h5>
+        description && <h5 className={`species-name`}>{description}</h5>
       }
 
       {
         content &&
-          <span className="content">
+          <span className={`content`}>
             {
               content.map((item) =>
                 item.url ?
