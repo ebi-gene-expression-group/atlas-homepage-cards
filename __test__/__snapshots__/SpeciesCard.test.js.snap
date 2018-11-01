@@ -19,11 +19,11 @@ exports[`SpeciesCard with no data matches snapshot 1`] = `
     }
   >
     <span
-      className="react-ebi-species-icon"
-      data-icon=""
+      className="icon icon-species"
+      data-icon="❔"
       style={
         Object {
-          "color": undefined,
+          "color": "black",
         }
       }
       title=""
