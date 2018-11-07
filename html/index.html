@@ -12,7 +12,16 @@
 <body>
 <div id="wrapper" class="row">
     <div id="content" class="small-12 columns">
+        <p>Species Card Examples (applied in the SC homepage left panel)</p>
         <div id="target">
+        </div>
+    </div>
+</div>
+
+<div id="wrapper" class="row">
+    <div id="content" class="small-12 columns">
+        <p>Image Card Examples (applied in the SC featured experiments landing page)</p>
+        <div id="target2">
         </div>
     </div>
 </div>
@@ -28,6 +37,11 @@
     host: 'http://localhost:8080/gxa/sc/',
     resource: 'json/experiments/popular-species'
   }, 'target')
+
+  homepageCardsDemo.render({
+    host: 'http://localhost:8080/gxa/sc/',
+    resource: 'json/landingpage/E-'
+  }, 'target2')
 </script>
 
 </html>
