@@ -1,16 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const ImageCard = ({iconSrc, description, content}) => {
+const ImageCard = ({iconSrc, iconDescription, content}) => {
   return (
     <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
-      <span className={`species-icon`} style={{fontSize: `600%`}}>
-        <img id={`icon`} alt={description} src={iconSrc}/>
-      </span>
-
       {
-        description && <h5 className="species-name">{description}</h5>
+        iconDescription && <h5 className="species-name">{iconDescription}</h5>
       }
+
+      <span className={`species-icon`} style={{fontSize: `800%`}}>
+        <img id={`icon`} alt={iconDescription} src={iconSrc}/>
+      </span>
 
       {
         content &&
@@ -30,7 +30,7 @@ const ImageCard = ({iconSrc, description, content}) => {
 
 ImageCard.propTypes = {
   iconSrc: PropTypes.string.isRequired,
-  description: PropTypes.string,
+  iconDescription: PropTypes.string,
   content: PropTypes.arrayOf(PropTypes.shape({
     text: PropTypes.string.isRequired,
     url: PropTypes.string
