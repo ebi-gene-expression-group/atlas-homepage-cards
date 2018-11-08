@@ -5,9 +5,18 @@ import ImageCard from './ImageCard'
 import URI from 'urijs'
 
 // A mapping of card types and their associated React component
-const cardTypeComponent = {
-  'species' : SpeciesCard,
-  'experiments' : ImageCard
+const renderCardTypeComponent = (card) => {
+  switch (card.iconType) {
+  case `species`:
+    return <SpeciesCard iconSrc={card.iconSrc}
+      description={card.iconDescription}
+      content={card.content}
+      key={card.iconSrc}/>
+  case `experiments`:
+    return <ImageCard {...card}/>
+  default:
+    return null
+  }
 }
 
 const CalloutAlert = ({error}) =>
@@ -86,14 +95,7 @@ class CardContainer extends React.Component {
     const { data, isLoading, hasError } = this.state
 
     const cards = data && data.map((card) => {
-      const Card = cardTypeComponent[card.iconType]
-
-      return Card ?
-        <Card iconSrc={card.iconSrc}
-          description={card.iconDescription}
-          content={card.content}
-          key={card.iconSrc}/> :
-        null
+      return renderCardTypeComponent(card)
     })
 
     return (
