@@ -12,10 +12,21 @@ const renderCardTypeComponent = (card) => {
       description={card.iconDescription}
       content={card.content}
       key={card.iconSrc}/>
-  case `experiments`:
+  case `image`:
     return <ImageCard {...card}/>
   default:
     return null
+  }
+}
+
+const wrapCards = (cards, iconType) => {
+  switch (iconType) {
+    case `species`:
+      return <div className={`row small-up-2 medium-up-3`}>{cards}</div> 
+    case `image`:
+      return <div>{cards}</div>
+    default:
+      return null
   }
 }
 
@@ -94,20 +105,19 @@ class CardContainer extends React.Component {
   render() {
     const { data, isLoading, hasError } = this.state
 
-    const cards = data && data.map((card) => {
-      return renderCardTypeComponent(card)
-    })
+    const cards = data && data.map((card) => renderCardTypeComponent(card))
 
     return (
       hasError ?
         <CalloutAlert error={hasError} /> :
         isLoading ?
           <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
-          data.length > 0 ?
-            <div className={`row small-up-2 medium-up-3`}>
-              { cards }
-            </div> :
-            null
+          data.length > 0 ?  
+            <div>   
+            { wrapCards(cards, data[0].iconType) } 
+            </div>
+        : 
+        null
     )
   }
 }
