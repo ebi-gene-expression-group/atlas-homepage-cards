@@ -30,7 +30,7 @@ const dummyCards = () => {
       ]
     },
     {
-      iconType: `experiments`,
+      iconType: `unknown`,
       iconSrc: `http://www.lingyun.com`,
       iconDescription: `Mus musculus`,
       content: [
@@ -58,7 +58,17 @@ const dummyCards = () => {
           text: `Go to experiments`,
         }
       ]
-    }
+    },
+    {
+      iconType: `imagespecies`,
+      iconSrc: `http://www.lingyun.com`,
+      iconDescription: `Mus musculus`,
+      content: [
+        {
+          text: `4 experiments`,
+        }
+      ]
+    },
   ]
 }
 
