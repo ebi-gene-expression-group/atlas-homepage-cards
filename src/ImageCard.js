@@ -31,21 +31,22 @@ class ImageCard extends React.Component {
 
         {
           content &&
-            <ul className="show_more" style={{listStyle:`none`, paddingLeft:`0`, marginLeft:`0`}}>
+            <ul className="content" style={{listStyle:`none`, paddingLeft:`0`, marginLeft:`0`}}>
               {
                 content.map((item, idx) => { 
                   return(
-                   item.url ?
-                    idx<5 || (idx>=5 && this.state.showResults) ?
-                    <li id={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
-                    null :
-                    <li id={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
+                    idx < 5 || (idx >= 5 && this.state.showResults) ?
+                      item.url ?
+                      <li id={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
+                      <li id={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
+                    :             
+                    null
                   )
                 })
               }
               {
-                content.length>=5 ?
-                    this.state.showResults?
+                content.length >= 5 ?
+                    this.state.showResults ?
                     <button className="button small hide_button" onClick={this.onClick}> Hide…</button>
                     :
                     <button className="button small show_button" onClick={this.onClick}> See more…</button>
