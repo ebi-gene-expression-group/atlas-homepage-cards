@@ -2,6 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SpeciesCard from './SpeciesCard'
 import ImageCard from './ImageCard'
+import ImageSpeciesCard from './ImageSpeciesCard'
+import EbiSpeciesIcon from 'react-ebi-species'
+
 import URI from 'urijs'
 
 // A mapping of card types and their associated React component
@@ -14,6 +17,8 @@ const renderCardTypeComponent = (card) => {
       key={card.iconSrc}/>
   case `image`:
     return <ImageCard {...card}/>
+  case `imagespecies`:
+    return <ImageSpeciesCard {...card}/>
   default:
     return null
   }
@@ -26,7 +31,7 @@ const wrapCards = (cards, iconType) => {
     case `image`:
       return <div>{cards}</div>
     default:
-      return null
+      return <div>{cards}</div>
   }
 }
 
