@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ImageCard with no data matches snapshot 1`] = `
+exports[`ImageSpeciesCard with no data matches snapshot 1`] = `
 <div
   className="column column-block text-center combo card"
   style={
@@ -18,9 +18,15 @@ exports[`ImageCard with no data matches snapshot 1`] = `
       }
     }
   >
-    <img
-      id="icon"
-      src=""
+    <span
+      className="icon icon-species"
+      data-icon="❔"
+      style={
+        Object {
+          "color": "black",
+        }
+      }
+      title=""
     />
   </span>
 </div>
