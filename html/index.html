@@ -20,8 +20,16 @@
 
 <div id="wrapper" class="row">
     <div id="content" class="small-12 columns">
-        <p>Image Card Examples (applied in the SC featured experiments landing page)</p>
+        <p>Image Card Example (applied in the SC featured experiments landing page, e.g. HCA)</p>
         <div id="target2">
+        </div>
+    </div>
+</div>
+
+<div id="wrapper" class="row">
+    <div id="content" class="small-12 columns">
+        <p>Image Species Card Example (applied in the SC featured experiments landing page, e.g. Homo sapiens)</p>
+        <div id="target3">
         </div>
     </div>
 </div>
@@ -40,8 +48,13 @@
 
   homepageCardsDemo.render({
     host: 'http://localhost:8080/gxa/sc/',
-    resource: 'json/landingpage/E-'
+    resource: 'json/landingpage/E-GEOD'
   }, 'target2')
+
+  homepageCardsDemo.render({
+    host: 'http://localhost:8080/gxa/sc/',
+    resource: `json/landingpage/species/Homo%20sapiens`
+  }, 'target3')
 </script>
 
 </html>
