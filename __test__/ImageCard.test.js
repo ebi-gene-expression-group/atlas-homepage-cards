@@ -18,8 +18,8 @@ describe(`ImageCard`, () => {
   test(`does not render non-existent URLs`, () => {
     const wrapper = shallow(<ImageCard iconSrc={``}/>)
 
-    expect(wrapper.find(`.icon`).exists()).toBe(true)
-    expect(wrapper.find(`.species-name`).exists()).toBe(false)
+    expect(wrapper.find(`.image-icon`).exists()).toBe(true)
+    expect(wrapper.find(`.image-description`).exists()).toBe(false)
     expect(wrapper.find(`.content`).exists()).toBe(false)
   })
 
@@ -38,7 +38,7 @@ describe(`ImageCard`, () => {
     const speciesName = `Mus musculus`
 
     const wrapper = shallow(<ImageCard iconSrc={speciesName} content={content} description={speciesName}/>)
-    expect(wrapper.find(`.species-name`).exists()).toBe(false)
+    expect(wrapper.find(`.image-description`).exists()).toBe(false)
 
     const contentWrapper = wrapper.find(`.content`)
     expect(contentWrapper.exists()).toBe(true)
@@ -85,7 +85,7 @@ describe(`ImageCard`, () => {
 
     const wrapper = shallow(<ImageCard iconSrc={speciesName} content={content} description={speciesName}/>)
     expect(wrapper.find(`.content .text`)).toHaveLength(5)
-    wrapper.setState({ showResults: true })
+    wrapper.setState({ isHidden: false })
     wrapper.update()
     expect(wrapper.find(`.content .text`)).toHaveLength(content.length)
   })
