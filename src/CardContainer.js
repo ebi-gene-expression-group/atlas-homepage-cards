@@ -113,14 +113,12 @@ class CardContainer extends React.Component {
     return (
       hasError ?
         <CalloutAlert error={hasError} /> :
-        isLoading ?
-          <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
-          data.length > 0 ?
-            <div>
-            { wrapCards(cards, data[0].iconType) }
-            </div>
-        :
-        null
+      isLoading ?
+        <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
+      // Promise fulfilled
+        <div>
+          { wrapCards(cards, data[0].iconType) }
+        </div>
     )
   }
 }
