@@ -18,7 +18,7 @@ class ImageCard extends React.Component {
   }
 
   render(){
-    var {iconSrc, iconDescription, content} = this.props
+    let {iconSrc, iconDescription, content} = this.props
     return (
       <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
         {
@@ -26,19 +26,19 @@ class ImageCard extends React.Component {
         }
 
         <span className={`species-icon`} style={{fontSize: `800%`}}>
-          <img id={`icon`} alt={iconDescription} src={iconSrc}/>
+          <img className={`icon`} alt={iconDescription} src={iconSrc}/>
         </span>
 
         {
           content &&
-            <ul className="content" style={{listStyle:`none`, paddingLeft:`0`, marginLeft:`0`}}>
+            <ul className={`content`} style={{listStyle:`none`, paddingLeft:`0`, marginLeft:`0`}}>
               {
                 content.map((item, idx) => { 
                   return(
                     idx < 5 || (idx >= 5 && this.state.showResults) ?
                       item.url ?
-                      <li id={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
-                      <li id={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
+                      <li className={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
+                      <li className={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
                     :             
                     null
                   )
