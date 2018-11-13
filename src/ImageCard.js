@@ -22,43 +22,36 @@ class ImageCard extends React.Component {
   render(){
     const {iconSrc, iconDescription, content} = this.props
 
-    let visibleContent = (max, content) => {
-      return content.slice(0, max).map((item) => {
-        return item.url ?
-                  <li className={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
-                  <li className={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
-                })
-    }
-    
+    const visibleContent = content && content.map((item) => {
+      return item.url ?
+        <li className={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
+        <li className={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
+    })
+
+
     return (
       <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
         {
-          iconDescription && <h5 className="image-description">{iconDescription}</h5>
+          iconDescription && <h5 className={`image-description`}>{iconDescription}</h5>
         }
 
         <span className={`image-icon`} style={{fontSize: `800%`}}>
-          <img style={{width:`128px`}} alt={iconDescription} src={iconSrc}/>
+          <img style={{width: `128px`}} alt={iconDescription} src={iconSrc}/>
         </span>
-
         {
           content &&
-            <ul className={`content`} style={{listStyle:`none`, paddingLeft:`0`, marginLeft:`0`}}>
+            <ul className={`content`} style={{listStyle: `none`, paddingLeft: `0`, marginLeft: `0`}}>
+              <div>
               {
                 this.state.isHidden ?
-                  <div>
-                    {visibleContent(MAX, content)}
-                    <button className="button small show_button" onClick={this.onClick}> See more…</button>
-                  </div>
-                  :
-                  <div>
-                    {visibleContent(content.length, content)}
-                    {
-                      content.length >= MAX ?
-                        <button className="button small hide_button" onClick={this.onClick}> Hide…</button> :
-                        null
-                    }
-                  </div>
+                  visibleContent.slice(0, MAX) :
+                  visibleContent
               }
+              {
+                content.length > MAX &&
+                <button className={`button small`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show less`}</button>
+              }  
+              </div>
             </ul>
         }
       </div>
