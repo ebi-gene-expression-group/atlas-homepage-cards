@@ -8,7 +8,7 @@ class ImageCard extends React.Component {
     super(props)
 
     this.state = {
-      isHidden: this.props.content ? this.props.content.length >= MAX : false
+      isHidden: this.props.content && this.props.content.length >= MAX
     }
     this.onClick = this.onClick.bind(this)
   }
