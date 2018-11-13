@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import EbiSpeciesIcon from 'react-ebi-species'
 
-class ImageSpeicesCard extends React.Component {
+class ImageSpeciesCard extends React.Component {
   constructor(props) {
     super(props)
 
@@ -61,7 +61,7 @@ class ImageSpeicesCard extends React.Component {
   }
 }
 
-ImageSpeicesCard.propTypes = {
+ImageSpeciesCard.propTypes = {
   iconSrc: PropTypes.string.isRequired,
   iconDescription: PropTypes.string,
   content: PropTypes.arrayOf(PropTypes.shape({
@@ -70,4 +70,4 @@ ImageSpeicesCard.propTypes = {
   }))
 }
 
-export default ImageSpeicesCard
+export default ImageSpeciesCard
