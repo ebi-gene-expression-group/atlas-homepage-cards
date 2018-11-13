@@ -9,14 +9,19 @@ import ImageCard from './cards/ImageCard'
 import ExtendableSpeciesCard from './cards/ExtendableSpeciesCard'
 
 // A mapping of card types and their associated React component
-const renderCardTypeComponent = (card) => {
+const renderCardTypeComponent = (card, index) => {
+  const propsWithKey = {
+    ...card,
+    key: `${card.iconSrc}-${index}`
+  }
+
   switch (card.iconType) {
   case `species`:
-    return <SpeciesCard {...card} key={card.iconSrc}/>
+    return <SpeciesCard {...propsWithKey} />
   case `image`:
-    return <ImageCard {...card}/>
+    return <ImageCard {...propsWithKey} />
   case `imagespecies`:
-    return <ExtendableSpeciesCard {...card}/>
+    return <ExtendableSpeciesCard {...propsWithKey} />
   default:
     return null
   }
