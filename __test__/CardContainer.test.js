@@ -9,6 +9,8 @@ import {getRandomInt, dummyCards} from './TestUtils'
 
 import CardContainer from '../src/CardContainer'
 import SpeciesCard from '../src/SpeciesCard'
+import ImageCard from '../src/ImageCard'
+import ImageSpeciesCard from '../src/ImageSpeciesCard'
 
 const getRandomHttpErrorCode = () => getRandomInt(400, 600)
 
@@ -65,5 +67,7 @@ describe(`CardContainer`, () => {
     wrapper.update()
 
     expect(wrapper.find(SpeciesCard)).toHaveLength(2)
+    expect(wrapper.find(ImageCard)).toHaveLength(1)
+    expect(wrapper.find(ImageSpeciesCard)).toHaveLength(1)
   })
 })
