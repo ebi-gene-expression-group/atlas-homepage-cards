@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import EbiSpeciesIcon from 'react-ebi-species'
 
+import cardPropTypes from './CardPropTypes'
+
 const MAX = 5
 
 class ExtendableSpeciesCard extends React.Component {
@@ -14,13 +16,13 @@ class ExtendableSpeciesCard extends React.Component {
     }
     this.onClick = this.onClick.bind(this)
   }
- 
+
   onClick() {
     this.setState({
       isHidden: !this.state.isHidden
     })
   }
-    
+
   render() {
     const {iconSrc, iconDescription, content} = this.props
 
@@ -51,7 +53,7 @@ class ExtendableSpeciesCard extends React.Component {
               {
                 content.length > MAX &&
                 <button className={`button small`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show less`}</button>
-              }  
+              }
               </div>
             </ul>
         }

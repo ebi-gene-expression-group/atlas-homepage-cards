@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import cardPropTypes from './CardPropTypes'
+
 const MAX = 5
 
 class ImageCard extends React.Component {
@@ -12,14 +14,14 @@ class ImageCard extends React.Component {
     }
     this.onClick = this.onClick.bind(this)
   }
- 
+
   onClick() {
     this.setState({
       isHidden: !this.state.isHidden
     })
   }
 
-  render(){
+  render() {
     const {iconSrc, iconDescription, content} = this.props
 
     const visibleContent = content && content.map((item) => {
@@ -50,7 +52,7 @@ class ImageCard extends React.Component {
               {
                 content.length > MAX &&
                 <button className={`button small`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show less`}</button>
-              }  
+              }
               </div>
             </ul>
         }
@@ -58,13 +60,7 @@ class ImageCard extends React.Component {
     )
   }
 }
-ImageCard.propTypes = {
-  iconSrc: PropTypes.string.isRequired,
-  iconDescription: PropTypes.string,
-  content: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    url: PropTypes.string
-  }))
-}
+
+ImageCard.propTypes = cardPropTypes
 
 export default ImageCard

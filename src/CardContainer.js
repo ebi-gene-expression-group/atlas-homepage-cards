@@ -1,11 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import SpeciesCard from './SpeciesCard'
-import ImageCard from './ImageCard'
-import ExtendableSpeciesCard from './ExtendableSpeciesCard'
+import URI from 'urijs'
+
 import EbiSpeciesIcon from 'react-ebi-species'
 
-import URI from 'urijs'
+import SpeciesCard from './cards/SpeciesCard'
+import ImageCard from './cards/ImageCard'
+import ExtendableSpeciesCard from './cards/ExtendableSpeciesCard'
 
 // A mapping of card types and their associated React component
 const renderCardTypeComponent = (card) => {
@@ -27,7 +28,7 @@ const renderCardTypeComponent = (card) => {
 const wrapCards = (cards, iconType) => {
   switch (iconType) {
     case `species`:
-      return <div className={`row small-up-2 medium-up-3`}>{cards}</div> 
+      return <div className={`row small-up-2 medium-up-3`}>{cards}</div>
     case `image`:
       return <div>{cards}</div>
     default:
@@ -117,11 +118,11 @@ class CardContainer extends React.Component {
         <CalloutAlert error={hasError} /> :
         isLoading ?
           <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
-          data.length > 0 ?  
-            <div>   
-            { wrapCards(cards, data[0].iconType) } 
+          data.length > 0 ?
+            <div>
+            { wrapCards(cards, data[0].iconType) }
             </div>
-        : 
+        :
         null
     )
   }
