@@ -108,7 +108,7 @@ class CardContainer extends React.Component {
   render() {
     const { data, isLoading, hasError } = this.state
 
-    const cards = data && data.map((card) => renderCardTypeComponent(card))
+    const cards = Array.isArray(data) && data.map(renderCardTypeComponent)
 
     return (
       hasError ?
