@@ -12,10 +12,7 @@ import ExtendableSpeciesCard from './cards/ExtendableSpeciesCard'
 const renderCardTypeComponent = (card) => {
   switch (card.iconType) {
   case `species`:
-    return <SpeciesCard iconSrc={card.iconSrc}
-      description={card.iconDescription}
-      content={card.content}
-      key={card.iconSrc}/>
+    return <SpeciesCard {...card} key={card.iconSrc}/>
   case `image`:
     return <ImageCard {...card}/>
   case `imagespecies`:
