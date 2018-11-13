@@ -5,7 +5,7 @@ const commonPublicPath = `/dist/`
 
 module.exports = {
   entry: {
-    homepageCardsDemo: [`babel-polyfill`, `./html/render.js`]
+    homepageCardsDemo: [`@babel/polyfill`, `./html/render.js`]
   },
 
   plugins: [
