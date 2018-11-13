@@ -42,8 +42,8 @@ describe(`ImageSpeciesCard`, () => {
 
     const contentWrapper = wrapper.find(`.content`)
     expect(contentWrapper.exists()).toBe(true)
-    expect(contentWrapper.find(`#text`)).toHaveLength(3)
-    expect(contentWrapper.find(`#url`).exists()).toBe(false)
+    expect(contentWrapper.find(`.content .text`)).toHaveLength(3)
+    expect(contentWrapper.find(`.content .url`).exists()).toBe(false)
   })
 
   test(`renders URLs`, () => {
@@ -55,7 +55,7 @@ describe(`ImageSpeciesCard`, () => {
     ]
 
     const wrapper = shallow(<ImageSpeciesCard iconSrc={``} content={content}/>)
-    const urlsWrapper = wrapper.find(`.content #url`)
+    const urlsWrapper = wrapper.find(`.content .url`)
 
     expect(urlsWrapper).toHaveLength(1)
   })
@@ -84,11 +84,9 @@ describe(`ImageSpeciesCard`, () => {
     const speciesName = `Mus musculus`
 
     const wrapper = shallow(<ImageSpeciesCard iconSrc={speciesName} content={content} description={speciesName}/>)
-    expect(wrapper.find(`#text`)).toHaveLength(5)
+    expect(wrapper.find(`.content .text`)).toHaveLength(5)
     wrapper.setState({ showResults: true })
     wrapper.update()
-    expect(wrapper.find(`#text`)).toHaveLength(content.length)
-
-
+    expect(wrapper.find(`.content .text`)).toHaveLength(content.length)
   })
 })
