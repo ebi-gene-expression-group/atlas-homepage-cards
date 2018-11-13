@@ -2,6 +2,7 @@ const CleanWebpackPlugin = require(`clean-webpack-plugin`)
 const path = require(`path`)
 
 const commonPublicPath = `/dist/`
+const vendorsBundleName = `vendors`
 
 module.exports = {
   entry: {
@@ -18,21 +19,16 @@ module.exports = {
     filename: `[name].bundle.js`,
     publicPath: `/html/`
   },
-
   optimization: {
+    runtimeChunk: {
+       name: vendorsBundleName
+    },
     splitChunks: {
-      chunks: `all`,
-      minSize: 1,
       cacheGroups: {
-        homepageCards: {
-          test: /[\\/]src[\\/]/,
-          name: `homepageCards`,
-          priority: -20
-        },
-        vendors: {
+        commons: {
           test: /[\\/]node_modules[\\/]/,
-          name: `vendors`,
-          priority: -10
+          name: vendorsBundleName,
+          chunks: 'all'
         }
       }
     }
