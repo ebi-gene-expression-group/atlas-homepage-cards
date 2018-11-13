@@ -23,11 +23,12 @@ class ExtendableSpeciesCard extends React.Component {
     
   render() {
     const {iconSrc, iconDescription, content} = this.props
+    
     let visibleContent = (max, content) => {
       return content.slice(0, max).map((item) => {
         return item.url ?
-        <li className={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
-        <li className={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
+                <li className={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
+                <li className={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
       })
     }
 
@@ -45,19 +46,19 @@ class ExtendableSpeciesCard extends React.Component {
             <ul className={`content`} style={{listStyle:`none`, paddingLeft:`0`, marginLeft:`0`}}>
               {
                 this.state.isHidden ?
-                <div>
-                  {visibleContent(MAX, content)}
-                  <button className="button small show_button" onClick={this.onClick}> See more…</button>
-                </div>
-                :
-                <div>
-                  {visibleContent(content.length, content)}
-                  {
-                    content.length >= MAX ?
-                    <button className="button small hide_button" onClick={this.onClick}> Hide…</button> :
-                    null
-                  }
-                </div>
+                  <div>
+                    {visibleContent(MAX, content)}
+                    <button className="button small show_button" onClick={this.onClick}> See more…</button>
+                  </div>
+                  :
+                  <div>
+                    {visibleContent(content.length, content)}
+                    {
+                      content.length >= MAX ?
+                        <button className="button small hide_button" onClick={this.onClick}> Hide…</button> :
+                        null
+                    }
+                  </div>
               }
             </ul>
         }
