@@ -4,19 +4,19 @@ import Enzyme from 'enzyme'
 import {shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import EbiSpeciesIcon from 'react-ebi-species'
-import ImageSpeciesCard from '../src/ImageSpeciesCard.js'
+import ExtendableSpeciesCard from '../src/ExtendableSpeciesCard.js'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe(`ImageSpeciesCard`, () => {
+describe(`ExtendableSpeciesCard`, () => {
   test(`with no data matches snapshot`, () => {
-    const tree = renderer.create(<ImageSpeciesCard iconSrc={``}/>).toJSON()
+    const tree = renderer.create(<ExtendableSpeciesCard iconSrc={``}/>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
 
   test(`does not render optional empty content`, () => {
-    const wrapper = shallow(<ImageSpeciesCard iconSrc={``} />)
+    const wrapper = shallow(<ExtendableSpeciesCard iconSrc={``} />)
 
     expect(wrapper.find(EbiSpeciesIcon).exists()).toBe(true)
     expect(wrapper.find(`.species-name`).exists()).toBe(false)
@@ -37,7 +37,7 @@ describe(`ImageSpeciesCard`, () => {
     ]
     const speciesName = `Mus musculus`
 
-    const wrapper = shallow(<ImageSpeciesCard iconSrc={speciesName} content={content} description={speciesName}/>)
+    const wrapper = shallow(<ExtendableSpeciesCard iconSrc={speciesName} content={content} description={speciesName}/>)
     expect(wrapper.find(`.species-name`).exists()).toBe(false)
 
     const contentWrapper = wrapper.find(`.content`)
@@ -54,7 +54,7 @@ describe(`ImageSpeciesCard`, () => {
       }
     ]
 
-    const wrapper = shallow(<ImageSpeciesCard iconSrc={``} content={content}/>)
+    const wrapper = shallow(<ExtendableSpeciesCard iconSrc={``} content={content}/>)
     const urlsWrapper = wrapper.find(`.content .url`)
 
     expect(urlsWrapper).toHaveLength(1)
@@ -83,9 +83,9 @@ describe(`ImageSpeciesCard`, () => {
     ]
     const speciesName = `Mus musculus`
 
-    const wrapper = shallow(<ImageSpeciesCard iconSrc={speciesName} content={content} description={speciesName}/>)
+    const wrapper = shallow(<ExtendableSpeciesCard iconSrc={speciesName} content={content} description={speciesName}/>)
     expect(wrapper.find(`.content .text`)).toHaveLength(5)
-    wrapper.setState({ showResults: true })
+    wrapper.setState({ isHidden: false })
     wrapper.update()
     expect(wrapper.find(`.content .text`)).toHaveLength(content.length)
   })
