@@ -11,7 +11,7 @@ exports[`ImageCard with no data matches snapshot 1`] = `
   }
 >
   <span
-    className="species-icon"
+    className="image-icon"
     style={
       Object {
         "fontSize": "800%",
@@ -19,8 +19,12 @@ exports[`ImageCard with no data matches snapshot 1`] = `
     }
   >
     <img
-      className="icon"
       src=""
+      style={
+        Object {
+          "width": "128px",
+        }
+      }
     />
   </span>
 </div>
