@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import SpeciesCard from './SpeciesCard'
 import ImageCard from './ImageCard'
-import ImageSpeciesCard from './ImageSpeciesCard'
+import ExtendableSpeciesCard from './ExtendableSpeciesCard'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import URI from 'urijs'
@@ -18,7 +18,7 @@ const renderCardTypeComponent = (card) => {
   case `image`:
     return <ImageCard {...card}/>
   case `imagespecies`:
-    return <ImageSpeciesCard {...card}/>
+    return <ExtendableSpeciesCard {...card}/>
   default:
     return null
   }
