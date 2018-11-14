@@ -28,18 +28,21 @@ const SpeciesCard = ({iconSrc, description, content}) =>
     }
 
     {
-      content &&
-      <span className={`content`}>
+      Array.isArray(content) &&
+      <ul style={{listStyle: `none`}}>
         {
-          content.map((item) =>
-            item.url ?
-              <p className={`url`} style={{marginBottom: `5px`}} key={item.text}>
+          content.map((item, index) => {
+            const key = `${item.text}-${index}`
+
+            return item.url ?
+              <li style={{marginBottom: `0.3rem`}} key={key}>
                 <a href={item.url}>{item.text}</a>
-              </p> :
-              <p className={`text`} style={{marginBottom: `5px`}} key={item.text}>{item.text}</p>
+              </li> :
+              <li style={{marginBottom: `0.3rem`}} key={key}>{item.text}</li>
+            }
           )
         }
-      </span>
+      </ul>
     }
   </div>
 
