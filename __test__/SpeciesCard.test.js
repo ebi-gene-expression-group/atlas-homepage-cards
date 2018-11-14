@@ -19,8 +19,8 @@ describe(`SpeciesCard`, () => {
     const wrapper = shallow(<SpeciesCard iconSrc={``} />)
 
     expect(wrapper.find(EbiSpeciesIcon).exists()).toBe(true)
-    expect(wrapper.find(`.species-name`).exists()).toBe(false)
-    expect(wrapper.find(`.content`).exists()).toBe(false)
+    expect(wrapper.find(`li`).exists()).toBe(false)
+    expect(wrapper.find(`ul`).exists()).toBe(false)
   })
 
   test(`does not render non-existent URLs`, () => {
@@ -42,15 +42,15 @@ describe(`SpeciesCard`, () => {
     }
 
     const wrapper = shallow(<SpeciesCard iconSrc={speciesName} content={content} description={description}/>)
-    expect(wrapper.find(`.species-name`).exists()).toBe(true)
-    expect(wrapper.find(`.species-name`).text()).toBe(speciesName)
-    expect(wrapper.find(`.species-url`).exists()).toBe(false)
+    expect(wrapper.find(`h5`).exists()).toBe(true)
+    expect(wrapper.find(`h5`).text()).toBe(speciesName)
+    expect(wrapper.find(`h5 a`).exists()).toBe(false)
 
-    const contentWrapper = wrapper.find(`.content`)
+    const contentWrapper = wrapper.find(`ul`)
 
     expect(contentWrapper.exists()).toBe(true)
-    expect(contentWrapper.find(`.content .text`)).toHaveLength(3)
-    expect(contentWrapper.find(`.content .url`).exists()).toBe(false)
+    expect(contentWrapper.find(`li`)).toHaveLength(3)
+    expect(contentWrapper.find(`li a`).exists()).toBe(false)
   })
 
   test(`renders URLs`, () => {
@@ -67,8 +67,8 @@ describe(`SpeciesCard`, () => {
     ]
 
     const wrapper = shallow(<SpeciesCard iconSrc={``} content={content} description={description}/>)
-    const urlsWrapper = wrapper.find(`.content .url`)
 
-    expect(urlsWrapper).toHaveLength(1)
+    expect(wrapper.find(`h5 a`).exists()).toBe(true)
+    expect(wrapper.find(`li a`)).toHaveLength(1)
   })
 })
