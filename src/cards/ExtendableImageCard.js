@@ -42,9 +42,7 @@ class ImageCard extends React.Component {
           <h5 className={`image-description`}>{iconDescription}</h5>
         }
 
-        <span className={`image-icon`} style={{fontSize: `800%`}}>
-          <img style={{width: `128px`}} alt={iconDescription} src={iconSrc}/>
-        </span>
+        <img alt={iconDescription} src={iconSrc}/>
         {
           content &&
             <ul className={`content`} style={{listStyle: `none`, paddingLeft: `0`, marginLeft: `0`}}>
