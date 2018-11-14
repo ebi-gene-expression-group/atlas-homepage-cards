@@ -36,9 +36,9 @@ class ExtendableSpeciesCard extends React.Component {
 
         {
           iconType === `species` ?
-            <span style={{fontSize: `800%`}}><EbiSpeciesIcon species={iconSrc} /></span> :
-          iconType === `image` ?
-            <img alt={iconDescription} src={iconSrc}/> :
+            <span style={{fontSize: `8rem`}}><EbiSpeciesIcon species={iconSrc} /></span> :
+          iconType === `image` ?  // Margin picked by trial and error to match EbiSpeciesIcon of size 8rem
+            <img alt={iconDescription} src={iconSrc} style={{height: `8rem`, marginBottom: `2.35rem`, marginTop: `2.50rem`}}/> :
           // iconType unknown
             null
         }
