@@ -47,7 +47,10 @@
   homepageCardsDemo.renderExtendableCard({
     iconType: `image`,
     iconSrc: `https://upload.wikimedia.org/wikipedia/en/6/6b/A_Rickle_in_Time.jpg`,
-    iconDescription: `A rickle in time`,
+    description: {
+      text: `A rickle in time`,
+      url: `#`
+    },
     content: [
       {
         text: `Morty Smith`,
@@ -73,7 +76,9 @@
   homepageCardsDemo.renderExtendableCard({
     iconType: `image`,
     iconSrc: `https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg`,
-    iconDescription: `The Smith household`,
+    description: {
+      text: `The Smith household`
+    },
     content: [
       {
         text: `Jerry Smith`,
@@ -101,7 +106,9 @@
   homepageCardsDemo.renderExtendableCard({
     iconType: `species`,
     iconSrc: `bat`,
-    iconDescription: `Batman films`,
+    description:{
+      text: `Batman films`
+    },
     content: [
       {
         url: 'https://en.wikipedia.org/wiki/Batman_(serial)',
@@ -129,7 +136,7 @@
       },
       {
         url: 'https://en.wikipedia.org/wiki/Batman_%26_Robin_(film)',
-        text: 'Batman &amp; Robin (1997)'
+        text: 'Batman & Robin (1997)'
       },
       {
         url: 'https://en.wikipedia.org/wiki/Batman_Begins',
@@ -165,7 +172,10 @@
   homepageCardsDemo.renderExtendableCard({
     iconType: `species`,
     iconSrc: `zebrafish`,
-    iconDescription: `Finding Nemo`,
+    description: {
+      text: `Finding Nemo`,
+      url: `#`
+    },
     content: [
       {
         text: `Dory`,
@@ -184,10 +194,10 @@
     resource: 'json/experiments/popular-species'
   }, 'species-card-container')
 
-  homepageCardsDemo.renderHcaLandingPageContainer({
-    host: 'http://localhost:8080/gxa/sc/',
-    resource: 'json/landingpage/E-GEOD'
-  }, 'image-card-container')
+  // homepageCardsDemo.renderHcaLandingPageContainer({
+  //   host: 'http://localhost:8080/gxa/sc/',
+  //   resource: 'json/landingpage/E-GEOD'
+  // }, 'image-card-container')
 </script>
 
 </html>

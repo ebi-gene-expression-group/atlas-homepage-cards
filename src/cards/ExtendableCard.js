@@ -24,23 +24,27 @@ class ExtendableSpeciesCard extends React.Component {
   }
 
   render() {
-    const { iconType, iconSrc, iconDescription, content } = this.props
+    const { iconType, iconSrc, description, content } = this.props
     const visibleContent = Array.isArray(content) && renderContentListItems(content)
+
+    const cardHero =
+      iconType === `species` ?
+        <span style={{fontSize: `8rem`}}><EbiSpeciesIcon species={iconSrc} /></span> :
+      // iconType === `image` ?  // Margin picked by trial and error to match EbiSpeciesIcon of size 8rem
+        <img src={iconSrc} style={{height: `8rem`, marginBottom: `2.35rem`, marginTop: `2.50rem`}}/>
 
     return (
       <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
         {
-          iconDescription &&
-          <h5>{iconDescription}</h5>
+          description && description.url ?
+            <h5><a href={description.url}>{description.text}</a></h5> :
+            <h5>{description.text}</h5>
         }
 
         {
-          iconType === `species` ?
-            <span style={{fontSize: `8rem`}}><EbiSpeciesIcon species={iconSrc} /></span> :
-          iconType === `image` ?  // Margin picked by trial and error to match EbiSpeciesIcon of size 8rem
-            <img alt={iconDescription} src={iconSrc} style={{height: `8rem`, marginBottom: `2.35rem`, marginTop: `2.50rem`}}/> :
-          // iconType unknown
-            null
+          description && description.url ?
+            <a href={description.url} style={{borderBottom: 0}}>{cardHero}</a> :
+            cardHero
         }
 
         <ul className={`content`} style={{listStyle: `none`}}>
@@ -59,13 +63,6 @@ class ExtendableSpeciesCard extends React.Component {
   }
 }
 
-ExtendableSpeciesCard.propTypes = {
-  iconSrc: PropTypes.string.isRequired,
-  iconDescription: PropTypes.string,
-  content: PropTypes.arrayOf(PropTypes.shape({
-    text: PropTypes.string.isRequired,
-    url: PropTypes.string
-  }))
-}
+ExtendableSpeciesCard.propTypes = cardPropTypes
 
 export default ExtendableSpeciesCard
