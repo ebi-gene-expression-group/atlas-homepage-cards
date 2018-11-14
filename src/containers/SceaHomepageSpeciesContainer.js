@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import URI from 'urijs'
+import styled from 'styled-components'
 
 import SpeciesCard from '../cards/SpeciesCard'
 
@@ -24,6 +25,13 @@ CalloutAlert.propTypes = {
     message: PropTypes.string.isRequired
   })
 }
+
+const CardContainer = styled.div`
+  border-radius: 8px;
+  :hover {
+    background: AliceBlue;
+  }
+`
 
 class SceaCardContainer extends React.Component {
   constructor(props) {
@@ -89,9 +97,9 @@ class SceaCardContainer extends React.Component {
           {
             Array.isArray(data) &&
             data.map((card, index) =>
-              <div className={`column column-block`} key={index}>
+              <CardContainer className={`column column-block`} key={index}>
                 <SpeciesCard {...card} />
-              </div>
+              </CardContainer>
             )
           }
         </div>

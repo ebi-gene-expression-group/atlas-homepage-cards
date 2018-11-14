@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import URI from 'urijs'
 
 import ExtendableCard from '../cards/ExtendableCard'
@@ -24,6 +25,13 @@ CalloutAlert.propTypes = {
     message: PropTypes.string.isRequired
   })
 }
+
+const CardContainer = styled.div`
+  border-radius: 8px;
+  :hover {
+    background: AliceBlue;
+  }
+`
 
 class HcaCardContainer extends React.Component {
   constructor(props) {
@@ -89,9 +97,9 @@ class HcaCardContainer extends React.Component {
           {
             Array.isArray(data) &&
             data.map((card, index) =>
-              <div className={`small-3 small-centered`} key={index}>
+              <CardContainer className={`small-3 small-centered`} key={index}>
                 <ExtendableCard {...card} />
-              </div>
+              </CardContainer>
             )
           }
         </div>
