@@ -2,38 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import URI from 'urijs'
 
-import EbiSpeciesIcon from 'react-ebi-species'
-
-import SpeciesCard from './cards/SpeciesCard'
-import ExtendableCard from './cards/ExtendableCard'
-
-// A mapping of card types and their associated React component
-const renderCardTypeComponent = (card, index) => {
-  const propsWithKey = {
-    ...card,
-    key: `${card.iconSrc}-${index}`
-  }
-
-  switch (card.iconType) {
-  case `species`:
-    return <SpeciesCard {...propsWithKey} />
-  case `image`:
-    return <ExtendableCard {...propsWithKey} />
-  default:
-    return null
-  }
-}
-
-const wrapCards = (cards, iconType) => {
-  switch (iconType) {
-    case `species`:
-      return <div className={`row small-up-2 medium-up-3`}>{cards}</div>
-    case `image`:
-      return <div>{cards}</div>
-    default:
-      return <div>{cards}</div>
-  }
-}
+import ExtendableCard from '../cards/ExtendableCard'
 
 const CalloutAlert = ({error}) =>
   <div className={`row column`}>
@@ -56,7 +25,7 @@ CalloutAlert.propTypes = {
   })
 }
 
-class CardContainer extends React.Component {
+class HcaCardContainer extends React.Component {
   constructor(props) {
     super(props)
 
@@ -110,24 +79,29 @@ class CardContainer extends React.Component {
   render() {
     const { data, isLoading, hasError } = this.state
 
-    const cards = Array.isArray(data) && data.map(renderCardTypeComponent)
-
     return (
       hasError ?
         <CalloutAlert error={hasError} /> :
       isLoading ?
         <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
       // Promise fulfilled
-        <div>
-          { wrapCards(cards, data[0].iconType) }
+        <div className={`row`}>
+          {
+            Array.isArray(data) &&
+            data.map((card, index) =>
+              <div className={`small-3 small-centered`} key={index}>
+                <ExtendableCard {...card} />
+              </div>
+            )
+          }
         </div>
     )
   }
 }
 
-CardContainer.propTypes = {
+HcaCardContainer.propTypes = {
   host: PropTypes.string.isRequired,
   resource: PropTypes.string.isRequired
 }
 
-export default CardContainer
+export default HcaCardContainer
