@@ -25,10 +25,14 @@ class ExtendableSpeciesCard extends React.Component {
   render() {
     const {iconSrc, iconDescription, content} = this.props
 
-    const visibleContent = content && content.map((item) => {
+    const visibleContent = Array.isArray(content) && content.map((item, index) => {
+      const key = `${item.text}-${index}`
+
       return item.url ?
-        <li className={`url`} style={{marginBottom: `0.3rem`}} key={item.text}><a href={item.url} key={item.text}>{item.text}</a></li> :
-        <li className={`text`} style={{marginBottom: `0.3rem`}} key={item.text}>{item.text}</li>
+        <li style={{marginBottom: `0.3rem`}} key={key}>
+          <a href={item.url}>{item.text}</a>
+        </li> :
+        <li style={{marginBottom: `0.3rem`}} key={key}>{item.text}</li>
     })
 
     return (
