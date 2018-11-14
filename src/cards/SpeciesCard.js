@@ -41,8 +41,6 @@ const SpeciesCard = ({iconSrc, description, content}) =>
         }
       </span>
     }
-
-
   </div>
 
 SpeciesCard.propTypes = cardPropTypes

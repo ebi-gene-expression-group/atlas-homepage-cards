@@ -7,7 +7,6 @@ import cardPropTypes from './CardPropTypes'
 const MAX = 5
 
 class ExtendableSpeciesCard extends React.Component {
-
   constructor(props) {
     super(props)
 
@@ -35,7 +34,8 @@ class ExtendableSpeciesCard extends React.Component {
     return (
       <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
         {
-          iconDescription && <h5 className={`species-name`}>{iconDescription}</h5>
+          iconDescription &&
+          <h5 className={`species-name`}>{iconDescription}</h5>
         }
 
         <span className={`species-icon`} style={{fontSize: `800%`}}>

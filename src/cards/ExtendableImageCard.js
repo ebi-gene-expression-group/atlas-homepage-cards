@@ -34,7 +34,8 @@ class ImageCard extends React.Component {
     return (
       <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
         {
-          iconDescription && <h5 className={`image-description`}>{iconDescription}</h5>
+          iconDescription &&
+          <h5 className={`image-description`}>{iconDescription}</h5>
         }
 
         <span className={`image-icon`} style={{fontSize: `800%`}}>
