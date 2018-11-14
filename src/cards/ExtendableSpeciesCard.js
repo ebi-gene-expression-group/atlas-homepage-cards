@@ -36,14 +36,14 @@ class ExtendableSpeciesCard extends React.Component {
     })
 
     return (
-      <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
+      <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>
         {
           iconDescription &&
-          <h5 className={`species-name`}>{iconDescription}</h5>
+          <h5>{iconDescription}</h5>
         }
 
-        <span className={`species-icon`} style={{fontSize: `800%`}}>
-          <EbiSpeciesIcon species={iconSrc}/>
+        <span style={{fontSize: `800%`}}>
+          <EbiSpeciesIcon species={iconSrc} />
         </span>
         {
           content &&

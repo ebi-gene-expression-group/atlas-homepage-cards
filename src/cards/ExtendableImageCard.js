@@ -34,12 +34,11 @@ class ImageCard extends React.Component {
         <li style={{marginBottom: `0.3rem`}} key={key}>{item.text}</li>
     })
 
-
     return (
-      <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
+      <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>
         {
           iconDescription &&
-          <h5 className={`image-description`}>{iconDescription}</h5>
+          <h5>{iconDescription}</h5>
         }
 
         <img alt={iconDescription} src={iconSrc}/>

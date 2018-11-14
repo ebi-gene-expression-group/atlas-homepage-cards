@@ -5,25 +5,25 @@ import EbiSpeciesIcon from 'react-ebi-species'
 import cardPropTypes from './CardPropTypes'
 
 const SpeciesCard = ({iconSrc, description, content}) =>
-  <div className={`column column-block text-center combo card`} style={{marginBottom:0, paddingBottom: `25px`}}>
+  <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>
     {
       description && description.url ?
-        <a className={`species-icon`} style={{fontSize: `600%`, borderBottom: 0}} href={description.url}>
+        <a style={{fontSize: `600%`, borderBottom: 0}} href={description.url}>
           <EbiSpeciesIcon species={iconSrc}/>
         </a> :
-        <span className={`species-icon`} style={{fontSize: `600%`}}>
+        <span style={{fontSize: `600%`}}>
           <EbiSpeciesIcon species={iconSrc}/>
         </span>
     }
 
     {
       description &&
-      <h5 className={`species-name`}>
-        {
-          description.url ?
-            <a className={`species-url`} href={description.url}>{description.text}</a> :
-            description.text
-        }
+      <h5>
+      {
+        description.url ?
+          <a href={description.url}>{description.text}</a> :
+          description.text
+      }
       </h5>
     }
 
