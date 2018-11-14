@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 
 // See JSON schema in README.md
 const cardPropTypes = {
+  iconType: PropTypes.oneOf([`species`, `image`]),
   iconSrc: PropTypes.string.isRequired,
   description: PropTypes.shape({
     text: PropTypes.string.isRequired,

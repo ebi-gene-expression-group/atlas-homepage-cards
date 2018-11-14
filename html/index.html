@@ -44,7 +44,8 @@
 
 <!-- Set to http://localhost:8080/gxa/ or http://localhost:8080/gxa/sc/ -- Remember the trailing slash! -->
 <script>
-  homepageCardsDemo.renderExtendableImageCard({
+  homepageCardsDemo.renderExtendableCard({
+    iconType: `image`,
     iconSrc: `https://upload.wikimedia.org/wikipedia/en/6/6b/A_Rickle_in_Time.jpg`,
     iconDescription: `A rickle in time`,
     content: [
@@ -69,7 +70,8 @@
     ]
   }, 'extendable-image-card-long');
 
-  homepageCardsDemo.renderExtendableImageCard({
+  homepageCardsDemo.renderExtendableCard({
+    iconType: `image`,
     iconSrc: `https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg`,
     iconDescription: `The members of the Smith household`,
     content: [
@@ -96,7 +98,8 @@
     ]
   }, 'extendable-image-card-short');
 
-  homepageCardsDemo.renderExtendableSpeciesCard({
+  homepageCardsDemo.renderExtendableCard({
+    iconType: `species`,
     iconSrc: `bat`,
     iconDescription: `Batman films`,
     content: [
@@ -159,7 +162,8 @@
     ]
   }, 'extendable-species-card-long');
 
-  homepageCardsDemo.renderExtendableSpeciesCard({
+  homepageCardsDemo.renderExtendableCard({
+    iconType: `species`,
     iconSrc: `zebrafish`,
     iconDescription: `Finding Nemo`,
     content: [
@@ -184,6 +188,6 @@
     host: 'http://localhost:8080/gxa/sc/',
     resource: 'json/landingpage/E-GEOD'
   }, 'image-card-container')
-</script> 
+</script>
 
 </html>

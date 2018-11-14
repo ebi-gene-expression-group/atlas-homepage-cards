@@ -5,8 +5,7 @@ import URI from 'urijs'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import SpeciesCard from './cards/SpeciesCard'
-import ImageCard from './cards/ExtendableImageCard'
-import ExtendableSpeciesCard from './cards/ExtendableSpeciesCard'
+import ExtendableCard from './cards/ExtendableCard'
 
 // A mapping of card types and their associated React component
 const renderCardTypeComponent = (card, index) => {
@@ -19,9 +18,7 @@ const renderCardTypeComponent = (card, index) => {
   case `species`:
     return <SpeciesCard {...propsWithKey} />
   case `image`:
-    return <ImageCard {...propsWithKey} />
-  case `imagespecies`:
-    return <ExtendableSpeciesCard {...propsWithKey} />
+    return <ExtendableCard {...propsWithKey} />
   default:
     return null
   }

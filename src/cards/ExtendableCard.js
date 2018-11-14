@@ -24,7 +24,7 @@ class ExtendableSpeciesCard extends React.Component {
   }
 
   render() {
-    const {iconSrc, iconDescription, content} = this.props
+    const { iconType, iconSrc, iconDescription, content } = this.props
     const visibleContent = Array.isArray(content) && renderContentListItems(content)
 
     return (
@@ -34,9 +34,14 @@ class ExtendableSpeciesCard extends React.Component {
           <h5>{iconDescription}</h5>
         }
 
-        <span style={{fontSize: `800%`}}>
-          <EbiSpeciesIcon species={iconSrc} />
-        </span>
+        {
+          iconType === `species` ?
+            <span style={{fontSize: `800%`}}><EbiSpeciesIcon species={iconSrc} /></span> :
+          iconType === `image` ?
+            <img alt={iconDescription} src={iconSrc}/> :
+          // iconType unknown
+            null
+        }
 
         <ul className={`content`} style={{listStyle: `none`}}>
         {
