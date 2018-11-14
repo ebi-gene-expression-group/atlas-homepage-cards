@@ -28,7 +28,7 @@ class ExtendableSpeciesCard extends React.Component {
     const visibleContent = Array.isArray(content) && renderContentListItems(content)
 
     return (
-      <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>
+      <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
         {
           iconDescription &&
           <h5>{iconDescription}</h5>

@@ -6,7 +6,7 @@ import renderContentListItems from './renderContentListItems'
 import cardPropTypes from './cardPropTypes'
 
 const SpeciesCard = ({iconSrc, description, content}) =>
-  <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>
+  <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
     {
       description && description.url ?
         <a style={{fontSize: `600%`, borderBottom: 0}} href={description.url}>
