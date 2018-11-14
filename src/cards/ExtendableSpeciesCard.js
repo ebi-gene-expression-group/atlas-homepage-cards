@@ -45,21 +45,17 @@ class ExtendableSpeciesCard extends React.Component {
         <span style={{fontSize: `800%`}}>
           <EbiSpeciesIcon species={iconSrc} />
         </span>
+
+        <ul className={`content`} style={{listStyle: `none`}}>
         {
-          content &&
-            <ul className={`content`} style={{listStyle: `none`, paddingLeft: `0`, marginLeft: `0`}}>
-              <div>
-              {
-                this.state.isHidden ?
-                  visibleContent.slice(0, MAX) :
-                  visibleContent
-              }
-              {
-                content.length > MAX &&
-                <button className={`button small`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show less`}</button>
-              }
-              </div>
-            </ul>
+          this.state.isHidden ?
+            visibleContent.slice(0, MAX) :
+            visibleContent
+        }
+        </ul>
+        {
+          Array.isArray(content) && content.length > MAX &&
+          <button className={`button`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show less`}</button>
         }
       </div>
     )
