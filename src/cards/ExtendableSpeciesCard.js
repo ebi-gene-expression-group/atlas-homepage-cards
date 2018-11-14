@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import EbiSpeciesIcon from 'react-ebi-species'
 
-import cardPropTypes from './CardPropTypes'
+import renderContentListItems from './renderContentListItems'
+import cardPropTypes from './cardPropTypes'
 
 const MAX = 5
 
@@ -24,16 +25,7 @@ class ExtendableSpeciesCard extends React.Component {
 
   render() {
     const {iconSrc, iconDescription, content} = this.props
-
-    const visibleContent = Array.isArray(content) && content.map((item, index) => {
-      const key = `${item.text}-${index}`
-
-      return item.url ?
-        <li style={{marginBottom: `0.3rem`}} key={key}>
-          <a href={item.url}>{item.text}</a>
-        </li> :
-        <li style={{marginBottom: `0.3rem`}} key={key}>{item.text}</li>
-    })
+    const visibleContent = Array.isArray(content) && renderContentListItems(content)
 
     return (
       <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>

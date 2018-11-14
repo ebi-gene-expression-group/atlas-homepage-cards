@@ -2,7 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import EbiSpeciesIcon from 'react-ebi-species'
 
-import cardPropTypes from './CardPropTypes'
+import renderContentListItems from './renderContentListItems'
+import cardPropTypes from './cardPropTypes'
 
 const SpeciesCard = ({iconSrc, description, content}) =>
   <div style={{marginBottom:0, paddingBottom: `25px`, textAlign: `center`}}>
@@ -30,18 +31,7 @@ const SpeciesCard = ({iconSrc, description, content}) =>
     {
       Array.isArray(content) &&
       <ul style={{listStyle: `none`}}>
-        {
-          content.map((item, index) => {
-            const key = `${item.text}-${index}`
-
-            return item.url ?
-              <li style={{marginBottom: `0.3rem`}} key={key}>
-                <a href={item.url}>{item.text}</a>
-              </li> :
-              <li style={{marginBottom: `0.3rem`}} key={key}>{item.text}</li>
-            }
-          )
-        }
+        {renderContentListItems(content)}
       </ul>
     }
   </div>
