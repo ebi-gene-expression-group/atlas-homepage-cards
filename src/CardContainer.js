@@ -5,7 +5,7 @@ import URI from 'urijs'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import SpeciesCard from './cards/SpeciesCard'
-import ImageCard from './cards/ImageCard'
+import ImageCard from './cards/ExtendableImageCard'
 import ExtendableSpeciesCard from './cards/ExtendableSpeciesCard'
 
 // A mapping of card types and their associated React component

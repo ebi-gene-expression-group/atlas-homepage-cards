@@ -8,9 +8,9 @@ import fetchMock from 'fetch-mock'
 import {getRandomInt, dummyCards} from './TestUtils'
 
 import CardContainer from '../src/CardContainer'
-import SpeciesCard from '../src/SpeciesCard'
-import ImageCard from '../src/ImageCard'
-import ExtendableSpeciesCard from '../src/ExtendableSpeciesCard'
+import SpeciesCard from '../src/cards/SpeciesCard'
+import ExtendableImageCard from '../src/cards/ExtendableImageCard'
+import ExtendableSpeciesCard from '../src/cards/ExtendableSpeciesCard'
 
 const getRandomHttpErrorCode = () => getRandomInt(400, 600)
 
@@ -67,7 +67,7 @@ describe(`CardContainer`, () => {
     wrapper.update()
 
     expect(wrapper.find(SpeciesCard)).toHaveLength(2)
-    expect(wrapper.find(ImageCard)).toHaveLength(1)
+    expect(wrapper.find(ExtendableImageCard)).toHaveLength(1)
     expect(wrapper.find(ExtendableSpeciesCard)).toHaveLength(1)
   })
 
@@ -89,7 +89,7 @@ describe(`CardContainer`, () => {
     await wrapper.instance().componentDidMount()
     wrapper.update()
 
-    expect(wrapper.find(ImageCard)).toHaveLength(1)
+    expect(wrapper.find(ExtendableImageCard)).toHaveLength(1)
     expect(wrapper.find(ExtendableSpeciesCard)).toHaveLength(1)
     expect(wrapper.find(`.row.small-up-2.medium-up-3`).exists()).toBe(false)
   })

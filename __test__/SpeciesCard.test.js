@@ -5,7 +5,7 @@ import {shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import EbiSpeciesIcon from 'react-ebi-species'
 
-import SpeciesCard from '../src/SpeciesCard.js'
+import SpeciesCard from '../src/cards/SpeciesCard'
 
 Enzyme.configure({ adapter: new Adapter() })
 

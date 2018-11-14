@@ -4,19 +4,19 @@ import Enzyme from 'enzyme'
 import {shallow} from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 
-import ImageCard from '../src/ImageCard.js'
+import ExtendableImageCard from '../src/cards/ExtendableImageCard'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe(`ImageCard`, () => {
+describe(`ExtendableImageCard`, () => {
   test(`with no data matches snapshot`, () => {
-    const tree = renderer.create(<ImageCard iconSrc={``}/>).toJSON()
+    const tree = renderer.create(<ExtendableImageCard iconSrc={``}/>).toJSON()
     expect(tree).toMatchSnapshot()
   })
 
 
   test(`does not render non-existent URLs`, () => {
-    const wrapper = shallow(<ImageCard iconSrc={``}/>)
+    const wrapper = shallow(<ExtendableImageCard iconSrc={``}/>)
 
     expect(wrapper.find(`.image-icon`).exists()).toBe(true)
     expect(wrapper.find(`.image-description`).exists()).toBe(false)
@@ -37,7 +37,7 @@ describe(`ImageCard`, () => {
     ]
     const speciesName = `Mus musculus`
 
-    const wrapper = shallow(<ImageCard iconSrc={speciesName} content={content} description={speciesName}/>)
+    const wrapper = shallow(<ExtendableImageCard iconSrc={speciesName} content={content} description={speciesName}/>)
     expect(wrapper.find(`.image-description`).exists()).toBe(false)
 
     const contentWrapper = wrapper.find(`.content`)
@@ -54,7 +54,7 @@ describe(`ImageCard`, () => {
       }
     ]
 
-    const wrapper = shallow(<ImageCard iconSrc={``} content={content}/>)
+    const wrapper = shallow(<ExtendableImageCard iconSrc={``} content={content}/>)
     const urlsWrapper = wrapper.find(`.content .url`)
 
     expect(urlsWrapper).toHaveLength(1)
@@ -83,7 +83,7 @@ describe(`ImageCard`, () => {
     ]
     const speciesName = `Mus musculus`
 
-    const wrapper = shallow(<ImageCard iconSrc={speciesName} content={content} description={speciesName}/>)
+    const wrapper = shallow(<ExtendableImageCard iconSrc={speciesName} content={content} description={speciesName}/>)
     expect(wrapper.find(`.content .text`)).toHaveLength(5)
     wrapper.setState({ isHidden: false })
     wrapper.update()
