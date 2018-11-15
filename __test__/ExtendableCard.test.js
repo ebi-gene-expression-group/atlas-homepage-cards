@@ -8,7 +8,7 @@ import EbiSpeciesIcon from 'react-ebi-species'
 import { getRandomInt } from './TestUtils'
 import {
   aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps,
-  batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps,
+  batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps
  } from './TestUtils'
 import ExtendableCard from '../src/cards/ExtendableCard'
 

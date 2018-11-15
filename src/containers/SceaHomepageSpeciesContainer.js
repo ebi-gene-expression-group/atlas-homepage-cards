@@ -1,9 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import URI from 'urijs'
 import styled from 'styled-components'
 
-import CalloutAlert from './CalloutAlert'
+import withFetchLoader from './FetchLoader'
+import cardPropTypes from '../cards/cardPropTypes'
 import SpeciesCard from '../cards/SpeciesCard'
 
 const CardContainer = styled.div`
@@ -13,83 +13,20 @@ const CardContainer = styled.div`
   }
 `
 
-class SceaCardContainer extends React.Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      data: null,
-      isLoading: true,
-      hasError: null
+const SceaHomepageSpeciesContainer = ({cards}) =>
+  <div className={`row small-up-2 medium-up-3`}>
+    {
+      Array.isArray(cards) &&
+      cards.map((card, index) =>
+        <CardContainer className={`column column-block`} key={index}>
+          <SpeciesCard {...card} />
+        </CardContainer>
+      )
     }
-  }
+  </div>
 
-  async componentDidMount() {
-    this.setState({ isLoading: true })
-
-    const url = URI(this.props.resource, this.props.host).toString()
-
-    try {
-      const response = await fetch(url)
-
-      if (!response.ok) {
-        throw new Error(`${url} => ${response.status}`)
-      }
-
-      this.setState({
-        data: await response.json(),
-        isLoading: false,
-        hasError: null
-      })
-    } catch(e) {
-      this.setState({
-        data: null,
-        isLoading: false,
-        hasError: {
-          description: `There was a problem communicating with the server. Please try again later.`,
-          name: e.name,
-          message: e.message
-        }
-      })
-    }
-  }
-
-  componentDidCatch(error, info) {
-    this.setState({
-      hasError: {
-        description: `There was a problem rendering this component.`,
-        name: error.name,
-        message: `${error.message} – ${info}`
-      }
-    })
-  }
-
-  render() {
-    const { data, isLoading, hasError } = this.state
-
-    return (
-      hasError ?
-        <CalloutAlert error={hasError} /> :
-      isLoading ?
-        <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
-      // Promise fulfilled
-        <div className={`row small-up-2 medium-up-3`}>
-          {
-            Array.isArray(data) &&
-            data.map((card, index) =>
-              <CardContainer className={`column column-block`} key={index}>
-                <SpeciesCard {...card} />
-              </CardContainer>
-            )
-          }
-        </div>
-    )
-  }
+SceaHomepageSpeciesContainer.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired
 }
 
-SceaCardContainer.propTypes = {
-  host: PropTypes.string.isRequired,
-  resource: PropTypes.string.isRequired
-}
-
-export default SceaCardContainer
+export default SceaHomepageSpeciesContainer

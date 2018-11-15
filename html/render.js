@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import SceaHomepageSpeciesContainer from '../src/containers/SceaHomepageSpeciesContainer'
-import HcaLandingPageContainer from '../src/containers/HcaLandingPageContainer'
+import { SceaHomepageSpeciesContainer, HcaLandingPageContainer } from '../src/index'
 
 import SpeciesCard from '../src/cards/SpeciesCard'
 import ExtendableCard from '../src/cards/ExtendableCard'
