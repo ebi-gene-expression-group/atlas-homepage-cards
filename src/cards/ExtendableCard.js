@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import renderContentListItems from './renderContentListItems'
@@ -37,8 +38,8 @@ class ExtendableSpeciesCard extends React.Component {
       <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
         {
           description && description.url ?
-            <h5><a href={description.url}>{description.text}</a></h5> :
-            <h5>{description.text}</h5>
+            <h4><a href={description.url}>{description.text}</a></h4> :
+            <h4>{description.text}</h4>
         }
 
         {
