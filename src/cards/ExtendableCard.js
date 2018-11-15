@@ -37,15 +37,19 @@ class ExtendableSpeciesCard extends React.Component {
     return (
       <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
         {
-          description && description.url ?
-            <h4><a href={description.url}>{description.text}</a></h4> :
-            <h4>{description.text}</h4>
+          description && (
+            description.url ?
+              <h4><a href={description.url}>{description.text}</a></h4> :
+              <h4>{description.text}</h4>
+            )
         }
 
         {
-          description && description.url ?
-            <a href={description.url} style={{borderBottom: 0}}>{cardHero}</a> :
-            cardHero
+          description && (
+            description.url ?
+              <a href={description.url} style={{borderBottom: 0}}>{cardHero}</a> :
+              cardHero
+            )
         }
 
         <ul className={`content`} style={{listStyle: `none`}}>
