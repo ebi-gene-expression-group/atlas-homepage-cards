@@ -1,3 +1,4 @@
-import CardContainer from './CardContainer.js'
+import SceaHomepageSpeciesContainer from './containers/SceaHomepageSpeciesContainer'
+import HcaLandingPageContainer from './containers/HcaLandingPageContainer'
 
-export default CardContainer
+export { SceaHomepageSpeciesContainer, HcaLandingPageContainer }
