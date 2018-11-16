@@ -61,7 +61,7 @@ class ExtendableSpeciesCard extends React.Component {
         </ul>
         {
           Array.isArray(content) && content.length > MAX &&
-          <button className={`button`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show less`}</button>
+          <button className={`button`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show fewer`}</button>
         }
       </div>
     )

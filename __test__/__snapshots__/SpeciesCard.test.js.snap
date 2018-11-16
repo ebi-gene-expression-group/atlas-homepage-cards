@@ -13,7 +13,7 @@ exports[`SpeciesCard matches snapshot: Batman films 1`] = `
   <span
     style={
       Object {
-        "fontSize": "600%",
+        "fontSize": "6rem",
       }
     }
   >
@@ -239,7 +239,7 @@ exports[`SpeciesCard matches snapshot: Finding Nemo 1`] = `
     style={
       Object {
         "borderBottom": 0,
-        "fontSize": "600%",
+        "fontSize": "6rem",
       }
     }
   >

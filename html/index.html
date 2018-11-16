@@ -45,69 +45,69 @@
 <!-- Set to http://localhost:8080/gxa/ or http://localhost:8080/gxa/sc/ -- Remember the trailing slash! -->
 <script>
   homepageCardsDemo.renderExtendableCard({
-    iconType: `image`,
-    iconSrc: `https://upload.wikimedia.org/wikipedia/en/6/6b/A_Rickle_in_Time.jpg`,
+    iconType: 'image',
+    iconSrc: 'https://upload.wikimedia.org/wikipedia/en/6/6b/A_Rickle_in_Time.jpg',
     description: {
-      text: `A rickle in time`,
-      url: `http://rickandmorty.wikia.com/wiki/A_Rickle_in_Time`
+      text: 'A rickle in time',
+      url: 'http://rickandmorty.wikia.com/wiki/A_Rickle_in_Time'
     },
     content: [
       {
-        text: `Morty Smith`,
+        text: 'Morty Smith',
       },
       {
-        text: `Summer Smith`,
+        text: 'Summer Smith',
       },
       {
-        text: `Rick Sanchez`,
+        text: 'Rick Sanchez',
       },
       {
-        text: `Rick Sanchez(split reality)`,
+        text: 'Rick Sanchez (split reality)',
       },
       {
-        text: `Morty Smith (split reality)`,
+        text: 'Morty Smith (split reality)',
       },
       {
-        text: `Summer Smith (split reality)`,
+        text: 'Summer Smith (split reality)',
       }
     ]
   }, 'extendable-image-card-long');
 
   homepageCardsDemo.renderExtendableCard({
-    iconType: `image`,
-    iconSrc: `https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg`,
+    iconType: 'image',
+    iconSrc: 'https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg',
     description: {
-      text: `The Smith household`
+      text: 'The Smith household'
     },
     content: [
       {
-        text: `Jerry Smith`,
-        url: `https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Jerry_Smith`
+        text: 'Jerry Smith',
+        url: 'https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Jerry_Smith'
       },
       {
-        text: `Beth Smith`,
-        url: `https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Beth_Smith`
+        text: 'Beth Smith',
+        url: 'https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Beth_Smith'
       },
       {
-        text: `Summer Smith`,
-        url: `https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Summer_Smith`
+        text: 'Summer Smith',
+        url: 'https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Summer_Smith'
       },
       {
-        text: `Morty Smith`,
-        url: `https://en.wikipedia.org/wiki/Morty_Smith`
+        text: 'Morty Smith',
+        url: 'https://en.wikipedia.org/wiki/Morty_Smith'
       },
       {
-        text: `Rick Sanchez`,
-        url: `https://en.wikipedia.org/wiki/Rick_Sanchez_(Rick_and_Morty)`
+        text: 'Rick Sanchez',
+        url: 'https://en.wikipedia.org/wiki/Rick_Sanchez_(Rick_and_Morty)'
       }
     ]
   }, 'extendable-image-card-short');
 
   homepageCardsDemo.renderExtendableCard({
-    iconType: `species`,
-    iconSrc: `bat`,
+    iconType: 'species',
+    iconSrc: 'bat',
     description:{
-      text: `Batman films`
+      text: 'Batman films'
     },
     content: [
       {
@@ -170,21 +170,21 @@
   }, 'extendable-species-card-long');
 
   homepageCardsDemo.renderExtendableCard({
-    iconType: `species`,
-    iconSrc: `zebrafish`,
+    iconType: 'species',
+    iconSrc: 'zebrafish',
     description: {
-      text: `Finding Nemo`,
-      url: `https://en.wikipedia.org/wiki/Finding_Nemo`
+      text: 'Finding Nemo',
+      url: 'https://en.wikipedia.org/wiki/Finding_Nemo'
     },
     content: [
       {
-        text: `Dory`,
+        text: 'Dory',
       },
       {
-        text: `Nemo`,
+        text: 'Nemo',
       },
       {
-        text: `Gill`,
+        text: 'Gill',
       }
     ]
   }, 'extendable-species-card-short');
@@ -192,12 +192,12 @@
   homepageCardsDemo.renderSceaHomepageSpeciesContainer({
     host: 'http://localhost:8080/gxa/sc/',
     resource: 'json/experiments/popular-species'
-  }, 'species-card-container')
+  }, 'species-card-container');
 
-  // homepageCardsDemo.renderHcaLandingPageContainer({
-  //   host: 'http://localhost:8080/gxa/sc/',
-  //   resource: 'json/landingpage/E-GEOD'
-  // }, 'image-card-container')
+  homepageCardsDemo.renderHcaLandingPageContainer({
+    host: 'http://localhost:8080/gxa/sc/',
+    resource: 'json/hca'
+  }, 'image-card-container');
 </script>
 
 </html>

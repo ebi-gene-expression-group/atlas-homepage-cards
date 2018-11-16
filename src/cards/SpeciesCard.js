@@ -9,10 +9,10 @@ const SpeciesCard = ({iconSrc, description, content}) =>
   <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
     {
       description && description.url ?
-        <a style={{fontSize: `600%`, borderBottom: 0}} href={description.url}>
+        <a style={{fontSize: `6rem`, borderBottom: 0}} href={description.url}>
           <EbiSpeciesIcon species={iconSrc}/>
         </a> :
-        <span style={{fontSize: `600%`}}>
+        <span style={{fontSize: `6rem`}}>
           <EbiSpeciesIcon species={iconSrc}/>
         </span>
     }

@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-import withFetchLoader from './FetchLoader'
 import cardPropTypes from '../cards/cardPropTypes'
 import SpeciesCard from '../cards/SpeciesCard'
 
