@@ -13,7 +13,7 @@ import HcaLandingPageContainer from '../src/containers/HcaLandingPageContainer'
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe(`SceaHomepageSpeciesContainer`, () => {
+describe(`HcaLandingPageContainer`, () => {
   const props = {
     cards: [
       aRickleInTimeImageCardProps,
@@ -28,6 +28,6 @@ describe(`SceaHomepageSpeciesContainer`, () => {
 
     expect(wrapper.find(ExtendableCard)).toHaveLength(props.cards.length)
     expect(wrapper.find(`.row`).exists()).toBe(true)
-    expect(wrapper.find(`.small-centered`)).toHaveLength(props.cards.length)
+    expect(wrapper.find(`.small-centered`)).toHaveLength(Math.ceil(props.cards.length / 3))
   })
 })
