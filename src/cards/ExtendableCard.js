@@ -52,7 +52,7 @@ class ExtendableSpeciesCard extends React.Component {
             )
         }
 
-        <ul className={`content`} style={{listStyle: `none`}}>
+        <ul className={`content`} style={{listStyle: `none`, marginLeft: 0}}>
         {
           this.state.isHidden ?
             visibleContent.slice(0, MAX) :

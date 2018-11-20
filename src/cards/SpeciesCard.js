@@ -30,7 +30,7 @@ const SpeciesCard = ({iconSrc, description, content}) =>
 
     {
       Array.isArray(content) &&
-      <ul style={{listStyle: `none`}}>
+      <ul style={{listStyle: `none`, marginLeft: 0}}>
         {renderContentListItems(content)}
       </ul>
     }

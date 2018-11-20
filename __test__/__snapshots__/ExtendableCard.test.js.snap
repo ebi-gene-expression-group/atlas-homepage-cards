@@ -41,6 +41,7 @@ exports[`ExtendableCard matches snapshot: A rickle in time 1`] = `
     style={
       Object {
         "listStyle": "none",
+        "marginLeft": 0,
       }
     }
   >
@@ -135,6 +136,7 @@ exports[`ExtendableCard matches snapshot: Batman films 1`] = `
     style={
       Object {
         "listStyle": "none",
+        "marginLeft": 0,
       }
     }
   >
@@ -262,6 +264,7 @@ exports[`ExtendableCard matches snapshot: Finding Nemo 1`] = `
     style={
       Object {
         "listStyle": "none",
+        "marginLeft": 0,
       }
     }
   >
@@ -324,6 +327,7 @@ exports[`ExtendableCard matches snapshot: The Smith household 1`] = `
     style={
       Object {
         "listStyle": "none",
+        "marginLeft": 0,
       }
     }
   >
