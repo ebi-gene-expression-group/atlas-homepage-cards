@@ -34,13 +34,12 @@ const withFetchLoader = (WrappedComponent) => {
     }
 
     async componentDidUpdate(prevProps, prevState) {
-      if (this.state.data === null && this.state.error === null) {
+      if (this.state.data === null && this.state.hasError === null) {
         await this._loadAsyncData(URI(this.props.resource, this.props.host).toString())
       }
     }
 
     async componentDidMount() {
-      //this.setState({ isLoading: true })
       await this._loadAsyncData(URI(this.props.resource, this.props.host).toString())
     }
 
