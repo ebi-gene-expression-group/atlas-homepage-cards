@@ -24,7 +24,7 @@ const withFetchLoader = (WrappedComponent) => {
         return {
           data: null,
           loading: true,
-          error: null,
+          hasError: null,
           url: url
         }
       }
@@ -55,13 +55,13 @@ const withFetchLoader = (WrappedComponent) => {
         this.setState({
           data: await response.json(),
           isLoading: false,
-          error: null
+          hasError: null
         })
       } catch (e) {
         this.setState({
           data: null,
           isLoading: false,
-          error: {
+          hasError: {
             description: `There was a problem communicating with the server. Please try again later.`,
             name: e.name,
             message: e.message
