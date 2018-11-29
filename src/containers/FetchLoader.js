@@ -86,7 +86,7 @@ const withFetchLoader = (WrappedComponent) => {
         hasError ?
           <CalloutAlert error={hasError} /> :
         isLoading ?
-          <p className={`row column`} id={`loading-message`}> Loading, please wait...</p> :
+          <p className={`row column loading-message`} > Loading, please wait...</p> :
         // Promise fulfilled
           <WrappedComponent cards={data}/>
       )
