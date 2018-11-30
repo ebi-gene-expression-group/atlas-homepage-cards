@@ -88,7 +88,7 @@ const withFetchLoader = (WrappedComponent) => {
         isLoading ?
           <p className={`row column loading-message`} > Loading, please wait...</p> :
         // Promise fulfilled
-          <WrappedComponent cards={data}/>
+          <WrappedComponent cards={data} host={this.props.host} />
       )
     }
   }
