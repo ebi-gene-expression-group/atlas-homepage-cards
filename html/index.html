@@ -37,6 +37,12 @@
     <h2 class="text-center">Image card container</h1>
     <div id="image-card-container"></div>
   </div>
+
+  <div class="row column">
+    <h2 class="text-center"> Latest experiments card container</h1>
+    <div id="latestExperiments-card-container"></div>
+  </div>
+
 </body>
 
 <script src="../dist/vendors.bundle.js"></script>
@@ -198,6 +204,11 @@
     host: 'http://localhost:8080/gxa/sc/',
     resource: 'json/hca'
   }, 'image-card-container');
+
+  homepageCardsDemo.renderLatestExperimentContainer({
+    host: 'http://localhost:8080/gxa/sc/',
+    resource: 'json/experiments/latestExperiments' 
+  }, 'latestExperiments-card-container');
 </script>
 
 </html>
