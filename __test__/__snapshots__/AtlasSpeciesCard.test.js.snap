@@ -1,0 +1,163 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtlasSpeciesCard matches snapshot: Batman films 1`] = `
+<div
+  style={
+    Object {
+      "marginBottom": 0,
+      "paddingBottom": "2rem",
+      "textAlign": "center",
+    }
+  }
+>
+  <span
+    style={
+      Object {
+        "fontSize": "6rem",
+      }
+    }
+  >
+    <span
+      className="icon icon-species"
+      data-icon="("
+      style={
+        Object {
+          "color": "indianred",
+        }
+      }
+      title="Bat"
+    />
+  </span>
+  <h5>
+    Batman films
+  </h5>
+  <p
+    className="experiments"
+  >
+    Batman (1943)
+     
+    <br />
+    <a
+      className="baseline sc-htpNat dbsHLq"
+      href="https://en.wikipedia.org/wiki/Batman_and_Robin_(serial)"
+    >
+      <span
+        className="baseline tiny button-rd"
+        data-tooltip={true}
+        style={
+          Object {
+            "cursor": "unset",
+            "fontWeight": "bold",
+          }
+        }
+        title="Baseline experiments"
+      >
+        Baseline
+      </span>
+      Batman and Robin (1949)
+    </a>
+    <a
+      className="differential padding-left-medium sc-htpNat dbsHLq"
+      href="https://en.wikipedia.org/wiki/Batman_(1966_film)"
+    >
+      <span
+        className="differential tiny button-rd"
+        data-tooltip={true}
+        style={
+          Object {
+            "cursor": "unset",
+            "fontWeight": "bold",
+          }
+        }
+        title="Differential experiments"
+      >
+        Differential
+      </span>
+      Batman (1966)
+    </a>
+  </p>
+</div>
+`;
+
+exports[`AtlasSpeciesCard matches snapshot: Finding Nemo 1`] = `
+<div
+  style={
+    Object {
+      "marginBottom": 0,
+      "paddingBottom": "2rem",
+      "textAlign": "center",
+    }
+  }
+>
+  <a
+    href="https://en.wikipedia.org/wiki/Finding_Nemo"
+    style={
+      Object {
+        "borderBottom": 0,
+        "fontSize": "6rem",
+      }
+    }
+  >
+    <span
+      className="icon icon-species"
+      data-icon="Z"
+      style={
+        Object {
+          "color": "deepskyblue",
+        }
+      }
+      title="Zebrafish"
+    />
+  </a>
+  <h5>
+    <a
+      href="https://en.wikipedia.org/wiki/Finding_Nemo"
+    >
+      Finding Nemo
+    </a>
+  </h5>
+  <p
+    className="experiments"
+  >
+    Dory
+     
+    <br />
+    <a
+      className="baseline sc-htpNat dbsHLq"
+    >
+      <span
+        className="baseline tiny button-rd"
+        data-tooltip={true}
+        style={
+          Object {
+            "cursor": "unset",
+            "fontWeight": "bold",
+          }
+        }
+        title="Baseline experiments"
+      >
+        Baseline
+      </span>
+      Nemo
+    </a>
+    <a
+      className="differential padding-left-medium sc-htpNat dbsHLq"
+    >
+      <span
+        className="differential tiny button-rd"
+        data-tooltip={true}
+        style={
+          Object {
+            "cursor": "unset",
+            "fontWeight": "bold",
+          }
+        }
+        title="Differential experiments"
+      >
+        Differential
+      </span>
+      Gill
+    </a>
+  </p>
+</div>
+`;
