@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.2/fonts.css" type="text/css" media="all" />
 
   <link rel="stylesheet" href="http://localhost:8080/gxa/sc/resources/css/theme-atlas.css" type="text/css" media="all">
+  <link rel="stylesheet" href="http://localhost:8080/gxa/resources/css/foundation/atlas.css" type="text/css" media="all">
 </head>
 
 <body>
@@ -26,6 +27,11 @@
     <div class="small-3 columns">
       <div id="extendable-species-card-short"></div>
     </div>
+  </div>
+
+  <div class="row column">
+    <h2 class="text-center">Species card container</h1>
+      <div id="gxa-species-card-container"></div>
   </div>
 
   <div class="row column">
@@ -188,6 +194,11 @@
       }
     ]
   }, 'extendable-species-card-short');
+
+  homepageCardsDemo.renderEaHomepageSpeciesContainer({
+    host: 'http://localhost:8080/gxa/',
+    resource: 'json/experiments/popular-species'
+  }, 'gxa-species-card-container');
 
   homepageCardsDemo.renderSceaHomepageSpeciesContainer({
     host: 'http://localhost:8080/gxa/sc/',

@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { SceaHomepageSpeciesContainer, HcaLandingPageContainer } from '../src/index'
+import { SceaHomepageSpeciesContainer, HcaLandingPageContainer, EaHomepageSpeciesContainer } from '../src/index'
 
 import SpeciesCard from '../src/cards/SpeciesCard'
 import ExtendableCard from '../src/cards/ExtendableCard'
@@ -14,6 +14,10 @@ const renderHcaLandingPageContainer = (options, target) => {
   ReactDOM.render(<HcaLandingPageContainer {...options} />, document.getElementById(target))
 }
 
+const renderEaHomepageSpeciesContainer = (options, target) => {
+  ReactDOM.render(<EaHomepageSpeciesContainer {...options} />, document.getElementById(target))
+}
+
 const renderSpeciesCard = (options, target) => {
   ReactDOM.render(<SpeciesCard {...options} />, document.getElementById(target))
 }
@@ -22,4 +26,4 @@ const renderExtendableCard = (options, target) => {
   ReactDOM.render(<ExtendableCard {...options} />, document.getElementById(target))
 }
 
-export { renderSceaHomepageSpeciesContainer, renderSpeciesCard, renderExtendableCard, renderHcaLandingPageContainer }
+export { renderSceaHomepageSpeciesContainer, renderSpeciesCard, renderExtendableCard, renderHcaLandingPageContainer, renderEaHomepageSpeciesContainer}
