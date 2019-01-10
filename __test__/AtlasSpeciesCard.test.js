@@ -4,9 +4,7 @@ import Enzyme from 'enzyme'
 import { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import EbiSpeciesIcon from 'react-ebi-species'
-import styled from 'styled-components'
 
-import { getRandomInt } from './TestUtils'
 import { batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps } from './TestUtils'
 import AtlasSpeciesCard from '../src/cards/AtlasSpeciesCard'
 
