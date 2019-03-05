@@ -1,13 +1,12 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import EbiSpeciesIcon from 'react-ebi-species'
+import styled from 'styled-components'
 
 import renderContentListItems from './renderContentListItems'
 import cardPropTypes from './cardPropTypes'
-import styled from 'styled-components'
 
-const MAX = 5
+const MAX_VISIBLE_ITEMS = 5
 
 const CardContentList = styled.ul`
   list-style: none;
@@ -21,7 +20,7 @@ class ExtendableSpeciesCard extends React.Component {
     super(props)
 
     this.state = {
-      isHidden: this.props.content && this.props.content.length >= MAX
+      isHidden: this.props.content && this.props.content.length > MAX_VISIBLE_ITEMS
     }
     this.onClick = this.onClick.bind(this)
   }
@@ -49,7 +48,7 @@ class ExtendableSpeciesCard extends React.Component {
             description.url ?
               <h4><a href={description.url}>{description.text}</a></h4> :
               <h4>{description.text}</h4>
-            )
+          )
         }
 
         {
@@ -57,18 +56,18 @@ class ExtendableSpeciesCard extends React.Component {
             description.url ?
               <a href={description.url} style={{borderBottom: 0}}>{cardHero}</a> :
               cardHero
-            )
+          )
         }
 
         <CardContentList className={`content`}>
-        {
-          this.state.isHidden ?
-            visibleContent.slice(0, MAX) :
-            visibleContent
-        }
+          {
+            this.state.isHidden ?
+              visibleContent.slice(0, MAX_VISIBLE_ITEMS) :
+              visibleContent
+          }
         </CardContentList>
         {
-          Array.isArray(content) && content.length > MAX &&
+          Array.isArray(content) && content.length > MAX_VISIBLE_ITEMS &&
           <button className={`button`} onClick={this.onClick}>{this.state.isHidden ? `Show all` : `Show fewer`}</button>
         }
       </div>
