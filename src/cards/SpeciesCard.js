@@ -1,12 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import renderContentListItems from './renderContentListItems'
 import cardPropTypes from './cardPropTypes'
 
 const SpeciesCard = ({iconSrc, description, content}) =>
-  <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
+  <div style={{marginBottom:0, textAlign: `center`}}>
     {
       description && description.url ?
         <a style={{fontSize: `6rem`, borderBottom: 0}} href={description.url}>
@@ -20,11 +19,11 @@ const SpeciesCard = ({iconSrc, description, content}) =>
     {
       description &&
       <h5>
-      {
-        description.url ?
-          <a href={description.url}>{description.text}</a> :
-          description.text
-      }
+        {
+          description.url ?
+            <a href={description.url}>{description.text}</a> :
+            description.text
+        }
       </h5>
     }
 
