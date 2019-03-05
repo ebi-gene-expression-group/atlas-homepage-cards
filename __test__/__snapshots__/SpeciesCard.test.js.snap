@@ -5,7 +5,6 @@ exports[`SpeciesCard matches snapshot: Batman films 1`] = `
   style={
     Object {
       "marginBottom": 0,
-      "paddingBottom": "2rem",
       "textAlign": "center",
     }
   }
@@ -230,7 +229,6 @@ exports[`SpeciesCard matches snapshot: Finding Nemo 1`] = `
   style={
     Object {
       "marginBottom": 0,
-      "paddingBottom": "2rem",
       "textAlign": "center",
     }
   }
