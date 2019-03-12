@@ -15,7 +15,7 @@ const CardContentList = styled.ul`
   margin-right: auto;
 `
 
-class ExtendableSpeciesCard extends React.Component {
+class ExtendableCard extends React.Component {
   constructor(props) {
     super(props)
 
@@ -75,6 +75,6 @@ class ExtendableSpeciesCard extends React.Component {
   }
 }
 
-ExtendableSpeciesCard.propTypes = cardPropTypes
+ExtendableCard.propTypes = cardPropTypes
 
-export default ExtendableSpeciesCard
+export default ExtendableCard
