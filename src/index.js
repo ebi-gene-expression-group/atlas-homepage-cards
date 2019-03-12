@@ -1,2 +1,2 @@
-export { default as HomePageSpeciesContainer } from './containers/HomepageSpeciesContainer'
-export { default as HcaLandingPageContainer } from './containers/HcaLandingPageContainer'
+export { default as SixColumnsSpeciesCardContainer } from './containers/SixColumnsSpeciesCardContainer'
+export { default as FlexibleGridExtendableCardContainer } from './containers/FlexibleGridExtendableCardContainer'
