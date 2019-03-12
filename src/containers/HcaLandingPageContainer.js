@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
 
 import cardPropTypes from '../cards/cardPropTypes'
 import ExtendableCard from '../cards/ExtendableCard'
@@ -36,13 +35,13 @@ const HcaLandingPageCardContainer = ({cards}) => {
         cardsSplitByRow.map((rowCards, rowIndex) =>
           <div className={`columns small-${rowCards.length * columnsPerCard} small-centered`} key={rowIndex}>
             <div className={`row`}>
-            {
-              rowCards.map((card, index) =>
-                <div className={`small-${columnsPerRow / rowCards.length} columns`} key={`${rowIndex}-${index}`}>
-                  <ExtendableCard {...card} />
-                </div>
-              )
-            }
+              {
+                rowCards.map((card, index) =>
+                  <div className={`small-${columnsPerRow / rowCards.length} columns`} key={`${rowIndex}-${index}`}>
+                    <ExtendableCard {...card} />
+                  </div>
+                )
+              }
             </div>
           </div>
         )

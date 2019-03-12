@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import EbiSpeciesIcon from 'react-ebi-species'
 
@@ -49,7 +48,7 @@ class ExtendableSpeciesCard extends React.Component {
             description.url ?
               <h4><a href={description.url}>{description.text}</a></h4> :
               <h4>{description.text}</h4>
-            )
+          )
         }
 
         {
@@ -57,15 +56,15 @@ class ExtendableSpeciesCard extends React.Component {
             description.url ?
               <a href={description.url} style={{borderBottom: 0}}>{cardHero}</a> :
               cardHero
-            )
+          )
         }
 
         <CardContentList className={`content`}>
-        {
-          this.state.isHidden ?
-            visibleContent.slice(0, MAX) :
-            visibleContent
-        }
+          {
+            this.state.isHidden ?
+              visibleContent.slice(0, MAX) :
+              visibleContent
+          }
         </CardContentList>
         {
           Array.isArray(content) && content.length > MAX &&

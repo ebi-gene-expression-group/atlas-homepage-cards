@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import renderContentListItems from './renderContentListItems'
@@ -20,11 +19,11 @@ const SpeciesCard = ({iconSrc, description, content}) =>
     {
       description &&
       <h5>
-      {
-        description.url ?
-          <a href={description.url}>{description.text}</a> :
-          description.text
-      }
+        {
+          description.url ?
+            <a href={description.url}>{description.text}</a> :
+            description.text
+        }
       </h5>
     }
 
