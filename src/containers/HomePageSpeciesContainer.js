@@ -12,8 +12,8 @@ const CardContainer = styled.div`
   }
 `
 
-const SceaHomepageSpeciesContainer = ({cards}) =>
-  <div className={`row small-up-2 medium-up-6`}>
+const HomePageSpeciesContainer = ({cards}) =>
+  <div className={`row small-up-2 medium-up-3 large-up-6`}>
     {
       Array.isArray(cards) &&
       cards.map((card, index) =>
@@ -24,8 +24,8 @@ const SceaHomepageSpeciesContainer = ({cards}) =>
     }
   </div>
 
-SceaHomepageSpeciesContainer.propTypes = {
+HomePageSpeciesContainer.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired
 }
 
-export default SceaHomepageSpeciesContainer
+export default HomePageSpeciesContainer

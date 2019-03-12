@@ -1,4 +1,2 @@
-import SceaHomepageSpeciesContainer from './containers/SceaHomepageSpeciesContainer'
-import HcaLandingPageContainer from './containers/HcaLandingPageContainer'
-
-export { SceaHomepageSpeciesContainer, HcaLandingPageContainer }
+export { default as HomePageSpeciesContainer } from './containers/HomepageSpeciesContainer'
+export { default as HcaLandingPageContainer } from './containers/HcaLandingPageContainer'
