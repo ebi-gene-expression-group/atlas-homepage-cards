@@ -1,7 +1,4 @@
-import React from 'react'
-import Enzyme from 'enzyme'
 import { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 
 import {
   aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps,
@@ -10,8 +7,6 @@ import {
 import ExtendableCard from '../src/cards/ExtendableCard'
 
 import HcaLandingPageContainer from '../src/containers/HcaLandingPageContainer'
-
-Enzyme.configure({ adapter: new Adapter() })
 
 describe(`HcaLandingPageContainer`, () => {
   const props = {

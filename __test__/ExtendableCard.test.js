@@ -1,25 +1,21 @@
-import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme from 'enzyme'
 import { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import { getRandomInt } from './TestUtils'
 import {
   aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps,
   batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps
- } from './TestUtils'
+} from './TestUtils'
 import ExtendableCard from '../src/cards/ExtendableCard'
 
-Enzyme.configure({ adapter: new Adapter() })
-
 describe(`ExtendableCard`, () => {
-  test.each([ [aRickleInTimeImageCardProps.description.text, aRickleInTimeImageCardProps],
-              [theSmithHouseholdImageCardProps.description.text, theSmithHouseholdImageCardProps],
-              [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
-              [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps] ])(
-    `matches snapshot: %s`, (titleText, props) => {
+  test.each([
+    [aRickleInTimeImageCardProps.description.text, aRickleInTimeImageCardProps],
+    [theSmithHouseholdImageCardProps.description.text, theSmithHouseholdImageCardProps],
+    [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
+    [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps]
+  ])(`matches snapshot: %s`, (titleText, props) => {
     const tree = renderer.create(<ExtendableCard {...props}/>).toJSON()
     expect(tree).toMatchSnapshot()
   })
@@ -64,7 +60,7 @@ describe(`ExtendableCard`, () => {
     const props = [aRickleInTimeImageCardProps, findingNemoSpeciesCardProps][getRandomInt(0, 2)]
 
     const wrapper = shallow(<ExtendableCard {...props} />).find(`.content`)
-    
+
     expect(wrapper.exists()).toBe(true)
     expect(wrapper.find(`li`)).toHaveLength(Math.min(props.content.length, 5))
     expect(wrapper.find(`li a`).exists()).toBe(false)

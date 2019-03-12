@@ -1,20 +1,15 @@
-import React from 'react'
 import renderer from 'react-test-renderer'
-import Enzyme from 'enzyme'
 import { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 import EbiSpeciesIcon from 'react-ebi-species'
 
-import { getRandomInt } from './TestUtils'
 import { batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps } from './TestUtils'
 import SpeciesCard from '../src/cards/SpeciesCard'
 
-Enzyme.configure({ adapter: new Adapter() })
-
 describe(`SpeciesCard`, () => {
-  test.each([ [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
-              [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps] ])(
-    `matches snapshot: %s`, (titleText, props) => {
+  test.each([
+    [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
+    [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps]
+  ])(`matches snapshot: %s`, (titleText, props) => {
     const tree = renderer.create(<SpeciesCard {...props}/>).toJSON()
     expect(tree).toMatchSnapshot()
   })
