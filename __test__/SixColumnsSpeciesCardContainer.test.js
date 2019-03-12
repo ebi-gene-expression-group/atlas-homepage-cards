@@ -3,15 +3,15 @@ import { shallow } from 'enzyme'
 import { batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps } from './TestUtils'
 import SpeciesCard from '../src/cards/SpeciesCard'
 
-import HomePageSpeciesContainer from '../src/containers/HomePageSpeciesContainer'
+import SixColumnsSpeciesCardContainer from '../src/containers/SixColumnsSpeciesCardContainer'
 
-describe(`SceaHomepageSpeciesContainer`, () => {
+describe(`SixColumnsSpeciesCardContainer`, () => {
   const props = {
     cards: [ batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps ]
   }
 
   test(`renders species cards using Foundation’s block grid`, () => {
-    const wrapper = shallow(<HomePageSpeciesContainer {...props} />)
+    const wrapper = shallow(<SixColumnsSpeciesCardContainer {...props} />)
 
     expect(wrapper.find(SpeciesCard)).toHaveLength(props.cards.length)
     expect(wrapper.find(`.row.small-up-2.medium-up-3.large-up-6`).exists()).toBe(true)

@@ -23,9 +23,9 @@ const partitionArray = (arr, lengthOfPartition) => {
   return result
 }
 
-const HcaLandingPageCardContainer = ({cards}) => {
-  const columnsPerRow = 12  // A Foundation thing
-  const columnsPerCard = 6  // Our thing, 6 columns per card (i.e. 2 cards per row)
+const FlexibleGridExtendableCardContainer = ({cards, cardsPerRow}) => {
+  const columnsPerRow = 12  // #JustFoundationThings
+  const columnsPerCard = Math.round(columnsPerRow / cardsPerRow)
 
   const cardsSplitByRow = partitionArray(cards, columnsPerRow / columnsPerCard)
 
@@ -50,8 +50,13 @@ const HcaLandingPageCardContainer = ({cards}) => {
   )
 }
 
-HcaLandingPageCardContainer.propTypes = {
-  cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired
+FlexibleGridExtendableCardContainer.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired,
+  cardsPerRow: PropTypes.number
 }
 
-export default HcaLandingPageCardContainer
+FlexibleGridExtendableCardContainer.defaultProps = {
+  cardsPerRow: 2
+}
+
+export default FlexibleGridExtendableCardContainer

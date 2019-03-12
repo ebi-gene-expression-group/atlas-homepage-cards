@@ -6,9 +6,9 @@ import {
 } from './TestUtils'
 import ExtendableCard from '../src/cards/ExtendableCard'
 
-import HcaLandingPageContainer from '../src/containers/HcaLandingPageContainer'
+import FlexibleGridExtendableCardContainer from '../src/containers/FlexibleGridExtendableCardContainer'
 
-describe(`HcaLandingPageContainer`, () => {
+describe(`FlexibleGridExtendableCardContainer`, () => {
   const props = {
     cards: [
       aRickleInTimeImageCardProps,
@@ -19,7 +19,7 @@ describe(`HcaLandingPageContainer`, () => {
   }
 
   test(`renders species cards using Foundation’s centered grid`, () => {
-    const wrapper = shallow(<HcaLandingPageContainer {...props} />)
+    const wrapper = shallow(<FlexibleGridExtendableCardContainer {...props} />)
 
     expect(wrapper.find(ExtendableCard)).toHaveLength(props.cards.length)
     expect(wrapper.find(`.row`).exists()).toBe(true)

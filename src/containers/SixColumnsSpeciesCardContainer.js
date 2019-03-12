@@ -12,7 +12,7 @@ const CardContainer = styled.div`
   }
 `
 
-const HomePageSpeciesContainer = ({cards}) =>
+const SixColumnsSpeciesCardContainer = ({cards}) =>
   <div className={`row small-up-2 medium-up-3 large-up-6`}>
     {
       Array.isArray(cards) &&
@@ -24,8 +24,8 @@ const HomePageSpeciesContainer = ({cards}) =>
     }
   </div>
 
-HomePageSpeciesContainer.propTypes = {
+SixColumnsSpeciesCardContainer.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired
 }
 
-export default HomePageSpeciesContainer
+export default SixColumnsSpeciesCardContainer
