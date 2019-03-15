@@ -1,73 +1,89 @@
-import renderer from 'react-test-renderer'
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import EbiSpeciesIcon from 'react-ebi-species'
 
-import { getRandomInt } from './TestUtils'
+import { generateRandomInt } from './TestUtils'
 import {
-  aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps,
-  batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps
+  aRickleInTimeImageCardProps, findingNemoSpeciesCardProps,     // URL in title, no URLs in content
+  theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps  // URLs in content, no URL in title
 } from './TestUtils'
-import ExtendableCard from '../src/cards/ExtendableCard'
+import ExtendableCard from '../src/ExtendableCard'
 
 describe(`ExtendableCard`, () => {
-  test.each([
-    [aRickleInTimeImageCardProps.description.text, aRickleInTimeImageCardProps],
-    [theSmithHouseholdImageCardProps.description.text, theSmithHouseholdImageCardProps],
-    [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
-    [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps]
-  ])(`matches snapshot: %s`, (titleText, props) => {
-    const tree = renderer.create(<ExtendableCard {...props}/>).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
-
   test(`can render species cards`, () => {
-    const props = [batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps][getRandomInt(0, 2)]
+    const props = [batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps][generateRandomInt(0, 2)]
     const wrapper = shallow(<ExtendableCard {...props}/>)
-    expect(wrapper.find(EbiSpeciesIcon).exists()).toBe(true)
-    expect(wrapper.find(`img`).exists()).toBe(false)
+    expect(wrapper.find(EbiSpeciesIcon)).toExist()
+    expect(wrapper.find(`img`)).not.toExist()
   })
 
   test(`can render image cards`, () => {
-    const props = [aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps][getRandomInt(0, 2)]
+    const props = [aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps][generateRandomInt(0, 2)]
     const wrapper = shallow(<ExtendableCard {...props}/>)
-    expect(wrapper.find(EbiSpeciesIcon).exists()).toBe(false)
-    expect(wrapper.find(`img`).exists()).toBe(true)
-
+    expect(wrapper.find(EbiSpeciesIcon)).not.toExist()
+    expect(wrapper.find(`img`)).toExist()
   })
 
-  test(`does not render optional empty title and content`, () => {
+  test(`does not render title or content if empty`, () => {
     const props = {
-      iconType: [`species`, `image`][getRandomInt(0, 2)],
+      iconType: [`species`, `image`][generateRandomInt(0, 2)],
       iconSrc: ``
     }
     const wrapper = shallow(<ExtendableCard {...props} />)
 
-    expect(wrapper.find(`h4`).exists()).toBe(false)
-    expect(wrapper.find(`li`).exists()).toBe(false)
+    expect(wrapper.find(`h4`)).not.toExist()
+    expect(wrapper.find(`li`)).not.toExist()
   })
 
-  test(`does not render non-existent URLs in title`, () => {
-    const props = [theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps][getRandomInt(0, 2)]
+  test(`does not show a link in title if URL is missing`, () => {
+    const props = [theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = mount(<ExtendableCard {...props}/>)
 
-    const wrapper = shallow(<ExtendableCard {...props} />)
-
-    expect(wrapper.find(`h4`).exists()).toBe(true)
-    expect(wrapper.find(`h4`).text()).toBe(props.description.text)
-    expect(wrapper.find(`h4 a`).exists()).toBe(false)
+    expect(wrapper).toContainExactlyOneMatchingElement(`h4`)
+    expect(wrapper.find(`h4`)).toHaveText(props.description.text)
+    expect(wrapper.find(`h4 a`)).not.toExist()
   })
 
-  test(`does not render non-existent URLs in content`, () => {
-    const props = [aRickleInTimeImageCardProps, findingNemoSpeciesCardProps][getRandomInt(0, 2)]
+  test(`does not show links in content if URLs are missing`, () => {
+    const props = [aRickleInTimeImageCardProps, findingNemoSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = mount(<ExtendableCard {...props}/>).find(`ul`)
 
-    const wrapper = shallow(<ExtendableCard {...props} />).find(`.content`)
+    expect(wrapper).toContainExactlyOneMatchingElement(`ul`)
+    expect(wrapper.find(`li`)).toHaveLength(props.content.length > 5 ? 5 : props.content.length)
+    expect(wrapper.find(`li a`)).not.toExist()
+  })
 
-    expect(wrapper.exists()).toBe(true)
-    expect(wrapper.find(`li`)).toHaveLength(Math.min(props.content.length, 5))
-    expect(wrapper.find(`li a`).exists()).toBe(false)
+  test(`shows a link in the title if URL is present`, () => {
+    const props = [aRickleInTimeImageCardProps, findingNemoSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = shallow(<ExtendableCard {...props}/>)
+
+    expect(wrapper.find(`h4 a`)).toExist()
+  })
+
+  test(`shows links in content if URLs are present`, () => {
+    const props = [theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = shallow(<ExtendableCard {...props}/>)
+
+    expect(wrapper.find(`li a`)).toHaveLength(props.content.length > 5 ? 5 : props.content.length)
+  })
+
+  test(`changes species icon size according to props`, () => {
+    const props = batmanFilmsSpeciesCardProps
+    const size = generateRandomInt(1, 10)
+    const wrapper = shallow(<ExtendableCard {...props} speciesIconHeight={`${size}rem`}/>)
+
+    expect(wrapper.find(`span`)).toHaveStyle(`fontSize`, `${size}rem`)
+  })
+
+  test(`changes image icon size according to props`, () => {
+    const props = aRickleInTimeImageCardProps
+    const size = generateRandomInt(100, 400)
+    const wrapper = shallow(<ExtendableCard {...props} imageIconHeight={`${size}px`}/>)
+
+    expect(wrapper.find(`img`)).toHaveStyle(`height`, `${size}px`)
   })
 
   test(`displays up to five content items by default with a button to show/hide the others`, () => {
-    const props = [aRickleInTimeImageCardProps, batmanFilmsSpeciesCardProps][getRandomInt(0, 2)]
+    const props = [aRickleInTimeImageCardProps, batmanFilmsSpeciesCardProps][generateRandomInt(0, 2)]
     expect(props.content.length).toBeGreaterThan(5)
 
     const wrapper = shallow(<ExtendableCard {...props} />)
@@ -78,5 +94,14 @@ describe(`ExtendableCard`, () => {
     wrapper.find(`button`).at(0).simulate(`click`)
     wrapper.update()
     expect(wrapper.find(`li`)).toHaveLength(5)
+  })
+
+  test.each([
+    [aRickleInTimeImageCardProps.description.text, aRickleInTimeImageCardProps],
+    [theSmithHouseholdImageCardProps.description.text, theSmithHouseholdImageCardProps],
+    [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
+    [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps]
+  ])(`matches snapshot: %s`, (titleText, props) => {
+    expect(mount(<ExtendableCard {...props}/>)).toMatchSnapshot()
   })
 })

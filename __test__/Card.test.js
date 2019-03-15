@@ -2,49 +2,69 @@ import { shallow, mount } from 'enzyme'
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import { generateRandomInt } from './TestUtils'
-import { aRickleInTimeImageCardProps, batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps } from './TestUtils'
+import {
+  aRickleInTimeImageCardProps, findingNemoSpeciesCardProps,     // URL in title, no URLs in content
+  theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps  // URLs in content, no URL in title
+} from './TestUtils'
 import Card from '../src/Card'
 
 describe(`Card`, () => {
+  test(`can render species cards`, () => {
+    const props = [batmanFilmsSpeciesCardProps, findingNemoSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = shallow(<Card {...props}/>)
+    expect(wrapper.find(EbiSpeciesIcon)).toExist()
+    expect(wrapper.find(`img`)).not.toExist()
+  })
+
   test(`can render image cards`, () => {
-    expect(shallow(<Card {...aRickleInTimeImageCardProps}/>)).toContainExactlyOneMatchingElement(`img`)
+    const props = [aRickleInTimeImageCardProps, theSmithHouseholdImageCardProps][generateRandomInt(0, 2)]
+    const wrapper = shallow(<Card {...props}/>)
+    expect(wrapper.find(EbiSpeciesIcon)).not.toExist()
+    expect(wrapper.find(`img`)).toExist()
+
   })
 
-  test(`can render species icon cards`, () => {
-    expect(shallow(<Card {...batmanFilmsSpeciesCardProps}/>)).toContainExactlyOneMatchingElement(EbiSpeciesIcon)
-  })
+  test(`does not render title or content if empty`, () => {
+    const props = {
+      iconType: [`species`, `image`][generateRandomInt(0, 2)],
+      iconSrc: ``
+    }
+    const wrapper = shallow(<Card {...props}/>)
 
-  test(`does not render optional empty title and content`, () => {
-    const wrapper = shallow(<Card iconType={`species`} iconSrc={``} />)
-
-    expect(wrapper).toContainExactlyOneMatchingElement(EbiSpeciesIcon)
     expect(wrapper).not.toContainMatchingElement(`h5`)
     expect(wrapper).not.toContainMatchingElement(`li`)
     expect(wrapper).not.toContainMatchingElement(`ul`)
   })
 
-  test(`does not render missing URLs`, () => {
-    const props = findingNemoSpeciesCardProps
-    const wrapper = shallow(<Card {...props} />)
+  test(`does not show a link in title if URL is missing`, () => {
+    const props = [theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = mount(<Card {...props}/>)
 
     expect(wrapper).toContainExactlyOneMatchingElement(`h5`)
     expect(wrapper.find(`h5`)).toHaveText(props.description.text)
-    expect(wrapper.find(`h5 a`).exists()).toBe(Boolean(props.description.url))
-
-    const contentWrapper = wrapper.find(`ul`)
-
-    expect(contentWrapper).toExist()
-    expect(contentWrapper.find(`li`)).toHaveLength(props.content.length)
-    expect(contentWrapper.find(`li a`).exists()).toBe(Boolean(props.content[0].url))
+    expect(wrapper.find(`h5 a`)).not.toExist()
   })
 
-  test(`renders URLs`, () => {
-    const props = batmanFilmsSpeciesCardProps
-    props.description.url = `#`
+  test(`does not show links in content if URLs are missing`, () => {
+    const props = [aRickleInTimeImageCardProps, findingNemoSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = mount(<Card {...props}/>).find(`ul`)
 
+    expect(wrapper).toContainExactlyOneMatchingElement(`ul`)
+    expect(wrapper.find(`li`)).toHaveLength(props.content.length)
+    expect(wrapper.find(`li a`)).not.toExist()
+  })
+
+  test(`shows a link in the title if URL is present`, () => {
+    const props = [aRickleInTimeImageCardProps, findingNemoSpeciesCardProps][generateRandomInt(0, 2)]
     const wrapper = shallow(<Card {...props}/>)
 
     expect(wrapper.find(`h5 a`)).toExist()
+  })
+
+  test(`shows links in content if URLs are present`, () => {
+    const props = [theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps][generateRandomInt(0, 2)]
+    const wrapper = shallow(<Card {...props}/>)
+
     expect(wrapper.find(`li a`)).toHaveLength(props.content.length)
   })
 
@@ -67,7 +87,8 @@ describe(`Card`, () => {
   test.each([
     [batmanFilmsSpeciesCardProps.description.text, batmanFilmsSpeciesCardProps],
     [findingNemoSpeciesCardProps.description.text, findingNemoSpeciesCardProps],
-    [aRickleInTimeImageCardProps.description.text, aRickleInTimeImageCardProps]
+    [aRickleInTimeImageCardProps.description.text, aRickleInTimeImageCardProps],
+    [theSmithHouseholdImageCardProps.description.text, theSmithHouseholdImageCardProps]
   ])(`matches snapshot: %s`, (titleText, props) => {
     expect(mount(<Card {...props}/>)).toMatchSnapshot()
   })
