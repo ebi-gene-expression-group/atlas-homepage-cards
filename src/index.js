@@ -1,2 +1,3 @@
-export { default as SixColumnsSpeciesCardContainer } from './containers/SixColumnsSpeciesCardContainer'
-export { default as FlexibleGridExtendableCardContainer } from './containers/FlexibleGridExtendableCardContainer'
+export { default as Card } from './Card'
+export { default as ExtendableCard } from './ExtendableCard'
+export { default } from './ResponsiveCardsRow'
