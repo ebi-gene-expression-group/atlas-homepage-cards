@@ -212,7 +212,7 @@ const buildFeaturedExperimentsCards = (host) => {
 const render = (options, target) => {
   ReactDOM.render(
     <ResponsiveCardsRow
-      cards={buildFeaturedExperimentsCards(options.host)}
+      cards={buildFeaturedExperimentsCards(`https://www.ebi.ac.uk/gxa/`)} // Ideally options.host, but it may be down
       {...options}
     />,
     document.getElementById(target))
