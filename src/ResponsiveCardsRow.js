@@ -7,7 +7,8 @@ import Card from './Card'
 
 const ResponsiveCardsRow = (props) => {
   const { CardClass, cards } = props
-  const { speciesIconHeight, imageIconHeight, hoverColour, smallColumns, mediumColumns, largeColumns } = props
+  const { className, smallColumns, mediumColumns, largeColumns } = props
+  const { speciesIconHeight, imageIconHeight, hoverColour } = props
 
   const CardContainer = styled.div`
     /* border-radius: 8px; */
@@ -17,7 +18,7 @@ const ResponsiveCardsRow = (props) => {
   `
 
   return (
-    <div className={`row small-up-${smallColumns} medium-up-${mediumColumns} large-up-${largeColumns}`}>
+    <div className={`${className} small-up-${smallColumns} medium-up-${mediumColumns} large-up-${largeColumns}`}>
       {
         Array.isArray(cards) &&
         cards.map((card, index) =>
@@ -36,6 +37,7 @@ const ResponsiveCardsRow = (props) => {
 ResponsiveCardsRow.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired,
   CardClass: PropTypes.func,
+  className: PropTypes.string,
   speciesIconHeight: PropTypes.string,
   imageIconHeight: PropTypes.string,
   hoverColour: PropTypes.string,
@@ -46,6 +48,7 @@ ResponsiveCardsRow.propTypes = {
 
 ResponsiveCardsRow.defaultProps = {
   CardClass: Card,
+  className: `row`,
   speciesIconHeight: `6rem`,
   imageIconHeight: `2rem`,
   hoverColour: `AliceBlue`,

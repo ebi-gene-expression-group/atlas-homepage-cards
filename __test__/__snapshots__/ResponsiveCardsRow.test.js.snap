@@ -148,6 +148,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
       },
     ]
   }
+  className="row"
   hoverColour="AliceBlue"
   imageIconHeight="2rem"
   largeColumns={8}
