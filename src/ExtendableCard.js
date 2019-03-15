@@ -1,9 +1,10 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import EbiSpeciesIcon from 'react-ebi-species'
 
 import renderContentListItems from './renderContentListItems'
-import cardPropTypes from './cardPropTypes'
+import modelPropTypes from './modelPropTypes'
 import styled from 'styled-components'
 
 const MAX = 5
@@ -32,14 +33,14 @@ class ExtendableCard extends React.Component {
   }
 
   render() {
-    const { iconType, iconSrc, description, content } = this.props
+    const { speciesIconHeight, imageIconHeight, iconType, iconSrc, description, content } = this.props
     const visibleContent = Array.isArray(content) && renderContentListItems(content)
 
     const cardHero =
       iconType === `species` ?
-        <span style={{fontSize: `8rem`}}><EbiSpeciesIcon species={iconSrc} /></span> :
+        <span style={{fontSize: speciesIconHeight}}><EbiSpeciesIcon species={iconSrc} /></span> :
       // iconType === `image` ?  // Margin picked by trial and error to match EbiSpeciesIcon of size 8rem
-        <img src={iconSrc} style={{height: `8rem`, marginBottom: `2.35rem`, marginTop: `2.50rem`}}/>
+        <img src={iconSrc} style={{height: imageIconHeight, marginBottom: `2.35rem`, marginTop: `2.50rem`}}/>
 
     return (
       <div style={{marginBottom:0, paddingBottom: `2rem`, textAlign: `center`}}>
@@ -75,6 +76,15 @@ class ExtendableCard extends React.Component {
   }
 }
 
-ExtendableCard.propTypes = cardPropTypes
+ExtendableCard.propTypes = {
+  ...modelPropTypes,
+  speciesIconHeight: PropTypes.string,
+  imageIconHeight: PropTypes.string
+}
+
+ExtendableCard.defaultProps = {
+  speciesIconHeight: `8rem`,
+  imageIconHeight: `8rem`
+}
 
 export default ExtendableCard
