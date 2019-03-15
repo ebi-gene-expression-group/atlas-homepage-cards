@@ -6,7 +6,10 @@ const vendorsBundleName = `vendors`
 
 module.exports = {
   entry: {
-    homepageCardsDemo: [`@babel/polyfill`, `./html/render.js`]
+    extendableCardDemo: [`@babel/polyfill`, `./html/ExtendableCardDemo.js`],
+    animalSpeciesSummary: [`@babel/polyfill`, `./html/AnimalSpeciesSummary.js`],
+    experimentsPanelDemo: [`@babel/polyfill`, `./html/ExperimentsPanelDemo.js`],
+    responsiveCardsRowDemo: [`@babel/polyfill`, `./html/ResponsiveCardsRowWithExtCardsDemo.js`]
   },
 
   plugins: [
