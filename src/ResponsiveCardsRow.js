@@ -7,8 +7,7 @@ import Card from './Card'
 
 const ResponsiveCardsRow = (props) => {
   const { CardClass, cards } = props
-  const { className, smallColumns, mediumColumns, largeColumns } = props
-  const { speciesIconHeight, imageIconHeight, hoverColour } = props
+  const { className, cardContainerClassName, speciesIconHeight, imageIconHeight, hoverColour } = props
 
   const CardContainer = styled.div`
     /* border-radius: 8px; */
@@ -18,11 +17,11 @@ const ResponsiveCardsRow = (props) => {
   `
 
   return (
-    <div className={`${className} small-up-${smallColumns} medium-up-${mediumColumns} large-up-${largeColumns}`}>
+    <div className={className}>
       {
         Array.isArray(cards) &&
         cards.map((card, index) =>
-          <CardContainer className={`column column-block`} key={index}>
+          <CardContainer className={cardContainerClassName} key={index}>
             <CardClass
               {...card}
               imageIconHeight={imageIconHeight}
@@ -38,23 +37,19 @@ ResponsiveCardsRow.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired,
   CardClass: PropTypes.func,
   className: PropTypes.string,
+  cardContainerClassName: PropTypes.string,
   speciesIconHeight: PropTypes.string,
   imageIconHeight: PropTypes.string,
-  hoverColour: PropTypes.string,
-  smallColumns: PropTypes.number,
-  mediumColumns: PropTypes.number,
-  largeColumns: PropTypes.number
+  hoverColour: PropTypes.string
 }
 
 ResponsiveCardsRow.defaultProps = {
   CardClass: Card,
-  className: `row`,
+  className: ``,
+  cardContainerClassName: ``,
   speciesIconHeight: `6rem`,
   imageIconHeight: `2rem`,
-  hoverColour: `AliceBlue`,
-  smallColumns: 2,
-  mediumColumns: 4,
-  largeColumns: 8
+  hoverColour: `AliceBlue`
 }
 
 export default ResponsiveCardsRow

@@ -200,13 +200,15 @@
   animalSpeciesSummary.render({
     host: 'http://localhost:8080/gxa/sc/',
     resource: 'json/species-summary',
-    largeColumns: 6
+    className: 'row small-up-2 medium-up-4 large-up-6',
+    cardContainerClassName: 'column'
   }, 'species-card-container');
 
   responsiveCardsRowDemo.render({
     host: 'http://localhost:8080/gxa/sc/',
     resource: 'json/hca',
-    largeColumns: 2,
+    className: 'row small-up-2',
+    cardContainerClassName: 'column',
     speciesIconHeight: `8rem`,
     imageIconHeight: `8rem`,
     hoverColour: `none`
@@ -216,8 +218,8 @@
     {
       host: 'http://localhost:8080/gxa/',
       imageIconHeight: '4rem',
-      largeColumns: 4,
-      mediumColumns: 3
+      className: 'row small-up-2 medium-up-3 large-up-4',
+      cardContainerClassName: 'column'
     },
     'experiments-container')
 </script>
