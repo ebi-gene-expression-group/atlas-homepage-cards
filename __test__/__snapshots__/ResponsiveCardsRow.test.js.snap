@@ -3,6 +3,7 @@
 exports[`ResponsiveCardsRow matches snapshot 1`] = `
 <ResponsiveCardsRow
   CardClass={[Function]}
+  cardContainerClassName=""
   cards={
     Array [
       Object {
@@ -148,31 +149,28 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
       },
     ]
   }
-  className="row"
+  className=""
   hoverColour="AliceBlue"
   imageIconHeight="2rem"
-  largeColumns={8}
-  mediumColumns={4}
-  smallColumns={2}
   speciesIconHeight="6rem"
 >
   <div
-    className="row small-up-2 medium-up-4 large-up-8"
+    className=""
   >
     <styled.div
-      className="column column-block"
+      className=""
       key="0"
     >
       <StyledComponent
-        className="column column-block"
+        className=""
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-bxivhb",
+              "componentId": "sc-htpNat",
               "isStatic": true,
-              "lastClassName": "hfBy",
+              "lastClassName": "dYUlEM",
               "rules": Array [
                 "
     /* border-radius: 8px; */
@@ -187,7 +185,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-bxivhb",
+            "styledComponentId": "sc-htpNat",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -197,7 +195,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="column column-block sc-bxivhb hfBy"
+          className="sc-htpNat dYUlEM"
         >
           <Card
             content={
@@ -343,19 +341,19 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
       </StyledComponent>
     </styled.div>
     <styled.div
-      className="column column-block"
+      className=""
       key="1"
     >
       <StyledComponent
-        className="column column-block"
+        className=""
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-bxivhb",
+              "componentId": "sc-htpNat",
               "isStatic": true,
-              "lastClassName": "hfBy",
+              "lastClassName": "dYUlEM",
               "rules": Array [
                 "
     /* border-radius: 8px; */
@@ -370,7 +368,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-bxivhb",
+            "styledComponentId": "sc-htpNat",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -380,7 +378,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="column column-block sc-bxivhb hfBy"
+          className="sc-htpNat dYUlEM"
         >
           <Card
             content={
@@ -705,19 +703,19 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
       </StyledComponent>
     </styled.div>
     <styled.div
-      className="column column-block"
+      className=""
       key="2"
     >
       <StyledComponent
-        className="column column-block"
+        className=""
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-bxivhb",
+              "componentId": "sc-htpNat",
               "isStatic": true,
-              "lastClassName": "hfBy",
+              "lastClassName": "dYUlEM",
               "rules": Array [
                 "
     /* border-radius: 8px; */
@@ -732,7 +730,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-bxivhb",
+            "styledComponentId": "sc-htpNat",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -742,7 +740,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="column column-block sc-bxivhb hfBy"
+          className="sc-htpNat dYUlEM"
         >
           <Card
             content={
@@ -868,19 +866,19 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
       </StyledComponent>
     </styled.div>
     <styled.div
-      className="column column-block"
+      className=""
       key="3"
     >
       <StyledComponent
-        className="column column-block"
+        className=""
         forwardedComponent={
           Object {
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-bxivhb",
+              "componentId": "sc-htpNat",
               "isStatic": true,
-              "lastClassName": "hfBy",
+              "lastClassName": "dYUlEM",
               "rules": Array [
                 "
     /* border-radius: 8px; */
@@ -895,7 +893,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-bxivhb",
+            "styledComponentId": "sc-htpNat",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -905,7 +903,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="column column-block sc-bxivhb hfBy"
+          className="sc-htpNat dYUlEM"
         >
           <Card
             content={
