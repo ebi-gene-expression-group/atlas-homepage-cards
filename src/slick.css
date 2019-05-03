@@ -1,0 +1,22 @@
+.slick-slide img {
+    margin: auto;
+}
+
+.slick-slider {
+    margin: 30px auto 50px;
+}
+
+.slick-prev:before {
+    color: #3497c5;
+}
+
+.slick-next:before{
+    color: #3497c5;
+}
+.slick-prev:hover {
+    color: #2f5767;
+}
+.slick-next:hover{
+    color: #2f5767;;
+}
+
