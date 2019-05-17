@@ -1,13 +1,14 @@
 import { shallow } from 'enzyme'
+import matchMedia from './matchMedia'
 
 import {
   aRickleInTimeImageCardProps, findingNemoSpeciesCardProps,     // URL in title, no URLs in content
   theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps  // URLs in content, no URL in title
 } from './TestUtils'
 
-import ResponsiveCardsRow from '../src/ResponsiveCardsRow'
+import CarousleCardsRow from '../src/CarousleCardsRow'
 
-describe(`ResponsiveCardsRow`, () => {
+describe(`CarousleCardsRow`, () => {
   const props = {
     cards:
       [
@@ -19,12 +20,12 @@ describe(`ResponsiveCardsRow`, () => {
     CardClass: () => `topClass`
   }
 
-  test(`displays cards in default row mode`, () => {
-    const wrapper = shallow(<ResponsiveCardsRow {...props}/>)
-    expect(wrapper.find(`#slide`)).toHaveLength(0)
+  test(`displays cards in slider mode`, () => {
+    const wrapper = shallow(<CarousleCardsRow {...props} />)
+    expect(wrapper.find(`#slide`)).toHaveLength(1)
   })
 
   test(`displays all cards`, () => {
-    expect(shallow(<ResponsiveCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
+    expect(shallow(<CarousleCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
   })
 })
