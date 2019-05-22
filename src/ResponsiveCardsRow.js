@@ -49,7 +49,7 @@ ResponsiveCardsRow.defaultProps = {
   cardContainerClassName: ``,
   speciesIconHeight: `6rem`,
   imageIconHeight: `2rem`,
-  hoverColour: `AliceBlue`,
+  hoverColour: `AliceBlue`
 }
 
 export default ResponsiveCardsRow
