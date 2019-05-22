@@ -1,12 +1,12 @@
-import { shallow } from 'enzyme'
-import matchMedia from './matchMedia'
+import { shallow, mount } from 'enzyme'
+import Slide from 'react-slick'
 
 import {
   aRickleInTimeImageCardProps, findingNemoSpeciesCardProps,     // URL in title, no URLs in content
   theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps  // URLs in content, no URL in title
 } from './TestUtils'
 
-import CarousleCardsRow from '../src/CarousleCardsRow'
+import CarouselCardsRow from '../src/CarouselCardsRow'
 
 describe(`CarousleCardsRow`, () => {
   const props = {
@@ -21,11 +21,15 @@ describe(`CarousleCardsRow`, () => {
   }
 
   test(`displays cards in slider mode`, () => {
-    const wrapper = shallow(<CarousleCardsRow {...props} />)
-    expect(wrapper.find(`#slide`)).toHaveLength(1)
+    const wrapper = shallow(<CarouselCardsRow {...props} />)
+    expect(wrapper.find(Slide)).toHaveLength(1)
   })
 
   test(`displays all cards`, () => {
-    expect(shallow(<CarousleCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
+    expect(shallow(<CarouselCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
+  })
+
+  test(`matches snapshot`, () => {
+    expect(mount(<CarouselCardsRow {...props}/>)).toMatchSnapshot()
   })
 })

@@ -5,7 +5,7 @@ import URI from 'urijs'
 import { CarousleCardsRow } from '../src/index'
 
 const buildFeaturedExperimentsCards = (host) => {
-  const linkToImage = (imgFileName) => URI(`resources/images/experiment-list-latest/${imgFileName}.png`, host).toString()
+  const linkToImage = (imgFileName) => URI(`resources/images/experiments-summary/${imgFileName}.png`, host).toString()
   const linkToExperiment = (accession) => URI(`experiments/${accession}`, host).toString()
   const linkToExperimentSet = (keyword) => URI(`experiments?experimentSet=${keyword}`, host).toString()
 

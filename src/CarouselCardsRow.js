@@ -6,7 +6,7 @@ import cardPropTypes from './modelPropTypes'
 import Card from './Card'
 import Slide from 'react-slick'
 
-const CarousleCardsRow = (props) => {
+const CarouselCardsRow = (props) => {
   const { CardClass, cards, slideSettings } = props
   const { className, cardContainerClassName, speciesIconHeight, imageIconHeight, hoverColour } = props
   slideSettings.slidesToShow = slideSettings.slidesToShow >= cards.length ? cards.length : slideSettings.slidesToShow
@@ -28,7 +28,7 @@ const CarousleCardsRow = (props) => {
   return (
     <div className={className}>
       {
-        <Slide id={`slide`} 
+        <Slide
           {...slideSettings}>
           {cardsDisplay}
         </Slide>
@@ -37,7 +37,7 @@ const CarousleCardsRow = (props) => {
   )
 }
 
-CarousleCardsRow.propTypes = {
+CarouselCardsRow.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.shape(cardPropTypes)).isRequired,
   CardClass: PropTypes.func,
   className: PropTypes.string,
@@ -48,7 +48,7 @@ CarousleCardsRow.propTypes = {
   slideSettings: PropTypes.object
 }
 
-CarousleCardsRow.defaultProps = {
+CarouselCardsRow.defaultProps = {
   CardClass: Card,
   className: ``,
   cardContainerClassName: ``,
@@ -66,4 +66,4 @@ CarousleCardsRow.defaultProps = {
   }
 }
 
-export default CarousleCardsRow
+export default CarouselCardsRow
