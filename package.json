@@ -23,7 +23,8 @@
       "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
     },
     "setupFiles": [
-      "<rootDir>/__mocks__/requestAnimationFrame.js"
+      "<rootDir>/__mocks__/requestAnimationFrame.js",
+      "<rootDir>/__mocks__/matchMedia.js"
     ],
     "coveragePathIgnorePatterns": [
       "__test__/TestUtils.js"

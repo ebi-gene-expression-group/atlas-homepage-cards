@@ -1,4 +1,5 @@
-import { shallow } from 'enzyme'
+import { shallow, mount } from 'enzyme'
+import Slide from 'react-slick'
 
 import {
   aRickleInTimeImageCardProps, findingNemoSpeciesCardProps,     // URL in title, no URLs in content
@@ -21,10 +22,14 @@ describe(`ResponsiveCardsRow`, () => {
 
   test(`displays cards in default row mode`, () => {
     const wrapper = shallow(<ResponsiveCardsRow {...props}/>)
-    expect(wrapper.find(`#slide`)).toHaveLength(0)
+    expect(wrapper.find(Slide)).toHaveLength(0)
   })
 
   test(`displays all cards`, () => {
     expect(shallow(<ResponsiveCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
+  })
+
+  test(`matches snapshot`, () => {
+    expect(mount(<ResponsiveCardsRow {...props}/>)).toMatchSnapshot()
   })
 })

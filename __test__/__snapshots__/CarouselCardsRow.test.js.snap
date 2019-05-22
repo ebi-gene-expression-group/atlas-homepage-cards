@@ -1,0 +1,803 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarousleCardsRow matches snapshot 1`] = `
+<CarouselCardsRow
+  CardClass={[Function]}
+  cardContainerClassName=""
+  cards={
+    Array [
+      Object {
+        "content": Array [
+          Object {
+            "text": "Morty Smith",
+          },
+          Object {
+            "text": "Summer Smith",
+          },
+          Object {
+            "text": "Rick Sanchez",
+          },
+          Object {
+            "text": "Rick Sanchez(split reality)",
+          },
+          Object {
+            "text": "Morty Smith (split reality)",
+          },
+          Object {
+            "text": "Summer Smith (split reality)",
+          },
+        ],
+        "description": Object {
+          "text": "A rickle in time",
+          "url": "http://rickandmorty.wikia.com/wiki/A_Rickle_in_Time",
+        },
+        "iconSrc": "https://upload.wikimedia.org/wikipedia/en/6/6b/A_Rickle_in_Time.jpg",
+        "iconType": "image",
+      },
+      Object {
+        "content": Array [
+          Object {
+            "text": "Batman (1943)",
+            "url": "https://en.wikipedia.org/wiki/Batman_(serial)",
+          },
+          Object {
+            "text": "Batman and Robin (1949)",
+            "url": "https://en.wikipedia.org/wiki/Batman_and_Robin_(serial)",
+          },
+          Object {
+            "text": "Batman (1966)",
+            "url": "https://en.wikipedia.org/wiki/Batman_(1966_film)",
+          },
+          Object {
+            "text": "Batman (1989)",
+            "url": "https://en.wikipedia.org/wiki/Batman_(1989_film)",
+          },
+          Object {
+            "text": "Batman Returns (1992)",
+            "url": "https://en.wikipedia.org/wiki/Batman_Returns",
+          },
+          Object {
+            "text": "Batman Forever (1995)",
+            "url": "https://en.wikipedia.org/wiki/Batman_Forever",
+          },
+          Object {
+            "text": "Batman &amp; Robin (1997)",
+            "url": "https://en.wikipedia.org/wiki/Batman_%26_Robin_(film)",
+          },
+          Object {
+            "text": "Batman Begins (2005)",
+            "url": "https://en.wikipedia.org/wiki/Batman_Begins",
+          },
+          Object {
+            "text": "The Dark Knight (2008)",
+            "url": "https://en.wikipedia.org/wiki/The_Dark_Knight_(film)",
+          },
+          Object {
+            "text": "The Dark Knight Rises (2012)",
+            "url": "https://en.wikipedia.org/wiki/The_Dark_Knight_Rises",
+          },
+          Object {
+            "text": "Batman v Superman: Dawn of Justice (2016)",
+            "url": "https://en.wikipedia.org/wiki/Batman_v_Superman:_Dawn_of_Justice",
+          },
+          Object {
+            "text": "Suicide Squad (2016)",
+            "url": "https://en.wikipedia.org/wiki/Suicide_Squad_(film)",
+          },
+          Object {
+            "text": "Justice League (2017)",
+            "url": "https://en.wikipedia.org/wiki/Justice_League_(film)",
+          },
+          Object {
+            "text": "Joker (2019)",
+            "url": "https://en.wikipedia.org/wiki/Joker_(2019_film)",
+          },
+        ],
+        "description": Object {
+          "text": "Batman films",
+        },
+        "iconSrc": "bat",
+        "iconType": "species",
+      },
+      Object {
+        "content": Array [
+          Object {
+            "text": "Dory",
+          },
+          Object {
+            "text": "Nemo",
+          },
+          Object {
+            "text": "Gill",
+          },
+        ],
+        "description": Object {
+          "text": "Finding Nemo",
+          "url": "https://en.wikipedia.org/wiki/Finding_Nemo",
+        },
+        "iconSrc": "zebrafish",
+        "iconType": "species",
+      },
+      Object {
+        "content": Array [
+          Object {
+            "text": "Jerry Smith",
+            "url": "https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Jerry_Smith",
+          },
+          Object {
+            "text": "Beth Smith",
+            "url": "https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Beth_Smith",
+          },
+          Object {
+            "text": "Summer Smith",
+            "url": "https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Summer_Smith",
+          },
+          Object {
+            "text": "Morty Smith",
+            "url": "https://en.wikipedia.org/wiki/Morty_Smith",
+          },
+          Object {
+            "text": "Rick Sanchez",
+            "url": "https://en.wikipedia.org/wiki/Rick_Sanchez_(Rick_and_Morty)",
+          },
+        ],
+        "description": Object {
+          "text": "The Smith household",
+        },
+        "iconSrc": "https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg",
+        "iconType": "image",
+      },
+    ]
+  }
+  className=""
+  hoverColour="AliceBlue"
+  imageIconHeight="2rem"
+  slideSettings={
+    Object {
+      "autoplay": true,
+      "autoplaySpeed": 2000,
+      "dots": true,
+      "infinite": true,
+      "slidesToScroll": 1,
+      "slidesToShow": 4,
+      "speed": 500,
+    }
+  }
+  speciesIconHeight="6rem"
+>
+  <div
+    className=""
+  >
+    <Slider
+      autoplay={true}
+      autoplaySpeed={2000}
+      dots={true}
+      infinite={true}
+      slidesToScroll={1}
+      slidesToShow={4}
+      speed={500}
+    >
+      <InnerSlider
+        accessibility={true}
+        adaptiveHeight={false}
+        afterChange={null}
+        appendDots={[Function]}
+        arrows={true}
+        autoplay={true}
+        autoplaySpeed={2000}
+        beforeChange={null}
+        centerMode={false}
+        centerPadding="50px"
+        className=""
+        cssEase="ease"
+        customPaging={[Function]}
+        dots={true}
+        dotsClass="slick-dots"
+        draggable={true}
+        easing="linear"
+        edgeFriction={0.35}
+        fade={false}
+        focusOnSelect={false}
+        infinite={true}
+        initialSlide={0}
+        lazyLoad={null}
+        nextArrow={null}
+        onEdge={null}
+        onInit={null}
+        onLazyLoadError={null}
+        onReInit={null}
+        pauseOnDotsHover={false}
+        pauseOnFocus={false}
+        pauseOnHover={true}
+        prevArrow={null}
+        responsive={null}
+        rows={1}
+        rtl={false}
+        slide="div"
+        slidesPerRow={1}
+        slidesToScroll={1}
+        slidesToShow={4}
+        speed={500}
+        swipe={true}
+        swipeEvent={null}
+        swipeToSlide={false}
+        touchMove={true}
+        touchThreshold={5}
+        unslick={true}
+        useCSS={true}
+        useTransform={true}
+        variableWidth={false}
+        vertical={false}
+        waitForAnimate={true}
+      >
+        <div
+          className="slick-slider slick-initialized"
+        >
+          <div
+            className="slick-list"
+          >
+            <Track
+              centerMode={false}
+              centerPadding="50px"
+              cssEase="ease"
+              currentSlide={0}
+              fade={false}
+              focusOnSelect={null}
+              infinite={true}
+              lazyLoad={null}
+              lazyLoadedList={Array []}
+              listHeight={0}
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              onMouseOver={[Function]}
+              rtl={false}
+              slideCount={4}
+              slideHeight={0}
+              slideWidth={0}
+              slidesToScroll={1}
+              slidesToShow={4}
+              speed={500}
+              trackStyle={
+                Object {
+                  "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                  "WebkitTransition": "",
+                  "msTransform": "translateX(0px)",
+                  "opacity": 1,
+                  "transform": "translate3d(0px, 0px, 0px)",
+                  "transition": "",
+                }
+              }
+              unslick={true}
+              variableWidth={false}
+              vertical={false}
+            >
+              <div
+                className="slick-track"
+                onMouseEnter={[Function]}
+                onMouseLeave={[Function]}
+                onMouseOver={[Function]}
+                style={
+                  Object {
+                    "WebkitTransform": "translate3d(0px, 0px, 0px)",
+                    "WebkitTransition": "",
+                    "msTransform": "translateX(0px)",
+                    "opacity": 1,
+                    "transform": "translate3d(0px, 0px, 0px)",
+                    "transition": "",
+                  }
+                }
+              >
+                <div
+                  aria-hidden={false}
+                  className="slick-slide slick-active slick-current"
+                  data-index={0}
+                  key="original0"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div
+                    key="0"
+                  >
+                    <styled.div
+                      className=""
+                      key="0"
+                      style={
+                        Object {
+                          "display": "inline-block",
+                          "width": "100%",
+                        }
+                      }
+                      tabIndex={-1}
+                    >
+                      <StyledComponent
+                        className=""
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-ifAKCX",
+                              "isStatic": true,
+                              "lastClassName": "iAfeJP",
+                              "rules": Array [
+                                "
+    /* border-radius: 8px; */
+    :hover {
+      background: ",
+                                "AliceBlue",
+                                ";
+    }
+  ",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-ifAKCX",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "width": "100%",
+                          }
+                        }
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="sc-ifAKCX iAfeJP"
+                          style={
+                            Object {
+                              "display": "inline-block",
+                              "width": "100%",
+                            }
+                          }
+                          tabIndex={-1}
+                        >
+                          <CardClass
+                            content={
+                              Array [
+                                Object {
+                                  "text": "Morty Smith",
+                                },
+                                Object {
+                                  "text": "Summer Smith",
+                                },
+                                Object {
+                                  "text": "Rick Sanchez",
+                                },
+                                Object {
+                                  "text": "Rick Sanchez(split reality)",
+                                },
+                                Object {
+                                  "text": "Morty Smith (split reality)",
+                                },
+                                Object {
+                                  "text": "Summer Smith (split reality)",
+                                },
+                              ]
+                            }
+                            description={
+                              Object {
+                                "text": "A rickle in time",
+                                "url": "http://rickandmorty.wikia.com/wiki/A_Rickle_in_Time",
+                              }
+                            }
+                            iconSrc="https://upload.wikimedia.org/wikipedia/en/6/6b/A_Rickle_in_Time.jpg"
+                            iconType="image"
+                            imageIconHeight="2rem"
+                            speciesIconHeight="6rem"
+                          >
+                            topClass
+                          </CardClass>
+                        </div>
+                      </StyledComponent>
+                    </styled.div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={false}
+                  className="slick-slide slick-active"
+                  data-index={1}
+                  key="original1"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div
+                    key="11"
+                  >
+                    <styled.div
+                      className=""
+                      key="111"
+                      style={
+                        Object {
+                          "display": "inline-block",
+                          "width": "100%",
+                        }
+                      }
+                      tabIndex={-1}
+                    >
+                      <StyledComponent
+                        className=""
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-ifAKCX",
+                              "isStatic": true,
+                              "lastClassName": "iAfeJP",
+                              "rules": Array [
+                                "
+    /* border-radius: 8px; */
+    :hover {
+      background: ",
+                                "AliceBlue",
+                                ";
+    }
+  ",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-ifAKCX",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "width": "100%",
+                          }
+                        }
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="sc-ifAKCX iAfeJP"
+                          style={
+                            Object {
+                              "display": "inline-block",
+                              "width": "100%",
+                            }
+                          }
+                          tabIndex={-1}
+                        >
+                          <CardClass
+                            content={
+                              Array [
+                                Object {
+                                  "text": "Batman (1943)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_(serial)",
+                                },
+                                Object {
+                                  "text": "Batman and Robin (1949)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_and_Robin_(serial)",
+                                },
+                                Object {
+                                  "text": "Batman (1966)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_(1966_film)",
+                                },
+                                Object {
+                                  "text": "Batman (1989)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_(1989_film)",
+                                },
+                                Object {
+                                  "text": "Batman Returns (1992)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_Returns",
+                                },
+                                Object {
+                                  "text": "Batman Forever (1995)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_Forever",
+                                },
+                                Object {
+                                  "text": "Batman &amp; Robin (1997)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_%26_Robin_(film)",
+                                },
+                                Object {
+                                  "text": "Batman Begins (2005)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_Begins",
+                                },
+                                Object {
+                                  "text": "The Dark Knight (2008)",
+                                  "url": "https://en.wikipedia.org/wiki/The_Dark_Knight_(film)",
+                                },
+                                Object {
+                                  "text": "The Dark Knight Rises (2012)",
+                                  "url": "https://en.wikipedia.org/wiki/The_Dark_Knight_Rises",
+                                },
+                                Object {
+                                  "text": "Batman v Superman: Dawn of Justice (2016)",
+                                  "url": "https://en.wikipedia.org/wiki/Batman_v_Superman:_Dawn_of_Justice",
+                                },
+                                Object {
+                                  "text": "Suicide Squad (2016)",
+                                  "url": "https://en.wikipedia.org/wiki/Suicide_Squad_(film)",
+                                },
+                                Object {
+                                  "text": "Justice League (2017)",
+                                  "url": "https://en.wikipedia.org/wiki/Justice_League_(film)",
+                                },
+                                Object {
+                                  "text": "Joker (2019)",
+                                  "url": "https://en.wikipedia.org/wiki/Joker_(2019_film)",
+                                },
+                              ]
+                            }
+                            description={
+                              Object {
+                                "text": "Batman films",
+                              }
+                            }
+                            iconSrc="bat"
+                            iconType="species"
+                            imageIconHeight="2rem"
+                            speciesIconHeight="6rem"
+                          >
+                            topClass
+                          </CardClass>
+                        </div>
+                      </StyledComponent>
+                    </styled.div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={false}
+                  className="slick-slide slick-active"
+                  data-index={2}
+                  key="original2"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div
+                    key="22"
+                  >
+                    <styled.div
+                      className=""
+                      key="222"
+                      style={
+                        Object {
+                          "display": "inline-block",
+                          "width": "100%",
+                        }
+                      }
+                      tabIndex={-1}
+                    >
+                      <StyledComponent
+                        className=""
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-ifAKCX",
+                              "isStatic": true,
+                              "lastClassName": "iAfeJP",
+                              "rules": Array [
+                                "
+    /* border-radius: 8px; */
+    :hover {
+      background: ",
+                                "AliceBlue",
+                                ";
+    }
+  ",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-ifAKCX",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "width": "100%",
+                          }
+                        }
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="sc-ifAKCX iAfeJP"
+                          style={
+                            Object {
+                              "display": "inline-block",
+                              "width": "100%",
+                            }
+                          }
+                          tabIndex={-1}
+                        >
+                          <CardClass
+                            content={
+                              Array [
+                                Object {
+                                  "text": "Dory",
+                                },
+                                Object {
+                                  "text": "Nemo",
+                                },
+                                Object {
+                                  "text": "Gill",
+                                },
+                              ]
+                            }
+                            description={
+                              Object {
+                                "text": "Finding Nemo",
+                                "url": "https://en.wikipedia.org/wiki/Finding_Nemo",
+                              }
+                            }
+                            iconSrc="zebrafish"
+                            iconType="species"
+                            imageIconHeight="2rem"
+                            speciesIconHeight="6rem"
+                          >
+                            topClass
+                          </CardClass>
+                        </div>
+                      </StyledComponent>
+                    </styled.div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden={false}
+                  className="slick-slide slick-active"
+                  data-index={3}
+                  key="original3"
+                  onClick={[Function]}
+                  style={
+                    Object {
+                      "outline": "none",
+                      "width": 0,
+                    }
+                  }
+                  tabIndex="-1"
+                >
+                  <div
+                    key="33"
+                  >
+                    <styled.div
+                      className=""
+                      key="333"
+                      style={
+                        Object {
+                          "display": "inline-block",
+                          "width": "100%",
+                        }
+                      }
+                      tabIndex={-1}
+                    >
+                      <StyledComponent
+                        className=""
+                        forwardedComponent={
+                          Object {
+                            "$$typeof": Symbol(react.forward_ref),
+                            "attrs": Array [],
+                            "componentStyle": ComponentStyle {
+                              "componentId": "sc-ifAKCX",
+                              "isStatic": true,
+                              "lastClassName": "iAfeJP",
+                              "rules": Array [
+                                "
+    /* border-radius: 8px; */
+    :hover {
+      background: ",
+                                "AliceBlue",
+                                ";
+    }
+  ",
+                              ],
+                            },
+                            "displayName": "styled.div",
+                            "foldedComponentIds": Array [],
+                            "render": [Function],
+                            "styledComponentId": "sc-ifAKCX",
+                            "target": "div",
+                            "toString": [Function],
+                            "warnTooManyClasses": [Function],
+                            "withComponent": [Function],
+                          }
+                        }
+                        forwardedRef={null}
+                        style={
+                          Object {
+                            "display": "inline-block",
+                            "width": "100%",
+                          }
+                        }
+                        tabIndex={-1}
+                      >
+                        <div
+                          className="sc-ifAKCX iAfeJP"
+                          style={
+                            Object {
+                              "display": "inline-block",
+                              "width": "100%",
+                            }
+                          }
+                          tabIndex={-1}
+                        >
+                          <CardClass
+                            content={
+                              Array [
+                                Object {
+                                  "text": "Jerry Smith",
+                                  "url": "https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Jerry_Smith",
+                                },
+                                Object {
+                                  "text": "Beth Smith",
+                                  "url": "https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Beth_Smith",
+                                },
+                                Object {
+                                  "text": "Summer Smith",
+                                  "url": "https://en.wikipedia.org/wiki/List_of_Rick_and_Morty_characters#Summer_Smith",
+                                },
+                                Object {
+                                  "text": "Morty Smith",
+                                  "url": "https://en.wikipedia.org/wiki/Morty_Smith",
+                                },
+                                Object {
+                                  "text": "Rick Sanchez",
+                                  "url": "https://en.wikipedia.org/wiki/Rick_Sanchez_(Rick_and_Morty)",
+                                },
+                              ]
+                            }
+                            description={
+                              Object {
+                                "text": "The Smith household",
+                              }
+                            }
+                            iconSrc="https://upload.wikimedia.org/wikipedia/en/b/b0/Rick_and_Morty_characters.jpg"
+                            iconType="image"
+                            imageIconHeight="2rem"
+                            speciesIconHeight="6rem"
+                          >
+                            topClass
+                          </CardClass>
+                        </div>
+                      </StyledComponent>
+                    </styled.div>
+                  </div>
+                </div>
+              </div>
+            </Track>
+          </div>
+        </div>
+      </InnerSlider>
+    </Slider>
+  </div>
+</CarouselCardsRow>
+`;
