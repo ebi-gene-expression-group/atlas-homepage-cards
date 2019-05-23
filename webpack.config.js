@@ -10,7 +10,7 @@ module.exports = {
     animalSpeciesSummary: [`@babel/polyfill`, `./html/AnimalSpeciesSummary.js`],
     experimentsPanelDemo: [`@babel/polyfill`, `./html/ExperimentsPanelDemo.js`],
     responsiveCardsRowDemo: [`@babel/polyfill`, `./html/ResponsiveCardsRowWithExtCardsDemo.js`],
-    carousleCardsPanelDemo: [`@babel/polyfill`, `./html/CarouselCardsPanelDemo.js`]
+    carouselCardsPanelDemo: [`@babel/polyfill`, `./html/CarouselCardsPanelDemo.js`]
   },
 
   plugins: [

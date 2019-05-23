@@ -10,27 +10,6 @@
 
   <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
   <link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
-  <style type="text/css">
-    .slick-slide img {
-      margin: auto;
-    }
-    .slick-slider {
-      margin: 30px auto 50px;
-    }
-    .slick-prev:before {
-      color: #3497c5;
-    }
-
-    .slick-next:before{
-      color: #3497c5;
-    }
-    .slick-prev:hover {
-      color: #2f5767;
-    }
-    .slick-next:hover{
-      color: #2f5767;
-    }
-  </style>
 </head>
 
 <body>
@@ -68,8 +47,8 @@
   </div>
 
   <div class="row column">
-    <h2 class="text-center">Carousle card row with <code>ExtendableCard</code></h2>
-    <div id="carousle-card-container"></div>
+    <h2 class="text-center">Carousel card row with <code>ExtendableCard</code></h2>
+    <div id="carousel-card-container"></div>
   </div>
 </body>
 
@@ -78,7 +57,7 @@
 <script src="../dist/extendableCardDemo.bundle.js"></script>
 <script src="../dist/experimentsPanelDemo.bundle.js"></script>
 <script src="../dist/responsiveCardsRowDemo.bundle.js"></script>
-<script src="../dist/carousleCardsPanelDemo.bundle.js"></script>
+<script src="../dist/carouselCardsPanelDemo.bundle.js"></script>
 <!-- Set to http://localhost:8080/gxa/ or http://localhost:8080/gxa/sc/ -- Remember the trailing slash! -->
 <script>
   extendableCardDemo.render({
@@ -252,12 +231,12 @@
     hoverColour: `none`
   }, 'image-card-container');
 
-  carousleCardsPanelDemo.render({
+  carouselCardsPanelDemo.render({
     host: 'http://localhost:8080/gxa/',
     imageIconHeight: '4rem',
     className: 'row small-up-2 medium-up-3 large-up-4',
     cardContainerClassName: 'column',
-  }, 'carousle-card-container');
+  }, 'carousel-card-container');
 
 
 </script>

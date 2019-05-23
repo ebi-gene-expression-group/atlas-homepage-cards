@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
 import cardPropTypes from './modelPropTypes'
 import Card from './Card'
@@ -17,6 +17,29 @@ const CarouselCardsRow = (props) => {
       background: ${hoverColour};
     }
   `
+
+  const SlideGlobalStyle = createGlobalStyle`
+    .slick-slide img {
+      margin: auto;
+    }
+    .slick-slider {
+      margin: 30px auto 50px;
+    }
+    .slick-prev:before {
+      color: #3497c5;
+    }
+
+    .slick-next:before{
+      color: #3497c5;
+    }
+    .slick-prev:hover {
+      color: #2f5767;
+    }
+    .slick-next:hover{
+      color: #2f5767;
+    }
+`
+
   const cardsDisplay = Array.isArray(cards) && cards.map((card, index) =>
     <CardContainer className={cardContainerClassName} key={index}>
       <CardClass
@@ -27,6 +50,7 @@ const CarouselCardsRow = (props) => {
 
   return (
     <div className={className}>
+      <SlideGlobalStyle />
       {
         <Slide
           {...slideSettings}>
