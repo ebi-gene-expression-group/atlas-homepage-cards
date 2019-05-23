@@ -22,11 +22,11 @@ describe(`CarousleCardsRow`, () => {
 
   test(`displays cards in slider mode`, () => {
     const wrapper = shallow(<CarouselCardsRow {...props} />)
-    expect(wrapper.find(Slide)).toHaveLength(1)
+    expect(wrapper).toContainExactlyOneMatchingElement(Slide)
   })
 
   test(`displays all cards`, () => {
-    expect(shallow(<CarouselCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
+    expect(shallow(<CarouselCardsRow {...props}/>)).toContainMatchingElements(props.cards.length, props.CardClass);
   })
 
   test(`matches snapshot`, () => {

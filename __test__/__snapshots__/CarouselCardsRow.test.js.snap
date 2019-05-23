@@ -168,6 +168,7 @@ exports[`CarousleCardsRow matches snapshot 1`] = `
   <div
     className=""
   >
+    <GlobalStyleComponent />
     <Slider
       autoplay={true}
       autoplaySpeed={2000}
