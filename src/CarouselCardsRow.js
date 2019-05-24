@@ -12,7 +12,6 @@ const CarouselCardsRow = (props) => {
   slideSettings.slidesToShow = slideSettings.slidesToShow >= cards.length ? cards.length : slideSettings.slidesToShow
 
   const CardContainer = styled.div`
-    /* border-radius: 8px; */
     :hover {
       background: ${hoverColour};
     }

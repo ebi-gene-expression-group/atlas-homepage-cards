@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import URI from 'urijs'
 
-import { CarousleCardsRow } from '../src/index'
+import { CarouselCardsRow } from '../src/index'
 
 const buildFeaturedExperimentsCards = (host) => {
   const linkToImage = (imgFileName) => URI(`resources/images/experiments-summary/${imgFileName}.png`, host).toString()
