@@ -29,7 +29,15 @@ describe(`CarousleCardsRow`, () => {
     expect(shallow(<CarouselCardsRow {...props}/>)).toContainMatchingElements(props.cards.length, props.CardClass);
   })
 
-  test(`matches snapshot`, () => {
-    expect(mount(<CarouselCardsRow {...props}/>)).toMatchSnapshot()
+  test(`matches snapshot with displaying a part of cards in the slider`, () => {
+    const slideSettings = {slidesToShow: props.cards.length - 1}
+
+    expect(shallow(<CarouselCardsRow {...props} slideSettings={slideSettings}/>)).toMatchSnapshot()
+  })
+
+  test(`matches snapshot with displaying all cards in the slider`, () => {
+    const slideSettings = {slidesToShow: props.cards.length + 1}
+
+    expect(shallow(<CarouselCardsRow {...props} slideSettings={slideSettings}/>)).toMatchSnapshot()
   })
 })

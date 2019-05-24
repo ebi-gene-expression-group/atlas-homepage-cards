@@ -152,7 +152,6 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
   className=""
   hoverColour="AliceBlue"
   imageIconHeight="2rem"
-  isSlider={false}
   speciesIconHeight="6rem"
 >
   <div
@@ -169,12 +168,11 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-ifAKCX",
+              "componentId": "sc-bxivhb",
               "isStatic": true,
-              "lastClassName": "iAfeJP",
+              "lastClassName": "gxCHar",
               "rules": Array [
                 "
-    /* border-radius: 8px; */
     :hover {
       background: ",
                 "AliceBlue",
@@ -186,7 +184,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-ifAKCX",
+            "styledComponentId": "sc-bxivhb",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -196,7 +194,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-ifAKCX iAfeJP"
+          className="sc-bxivhb gxCHar"
         >
           <CardClass
             content={
@@ -248,12 +246,11 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-ifAKCX",
+              "componentId": "sc-bxivhb",
               "isStatic": true,
-              "lastClassName": "iAfeJP",
+              "lastClassName": "gxCHar",
               "rules": Array [
                 "
-    /* border-radius: 8px; */
     :hover {
       background: ",
                 "AliceBlue",
@@ -265,7 +262,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-ifAKCX",
+            "styledComponentId": "sc-bxivhb",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -275,7 +272,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-ifAKCX iAfeJP"
+          className="sc-bxivhb gxCHar"
         >
           <CardClass
             content={
@@ -364,12 +361,11 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-ifAKCX",
+              "componentId": "sc-bxivhb",
               "isStatic": true,
-              "lastClassName": "iAfeJP",
+              "lastClassName": "gxCHar",
               "rules": Array [
                 "
-    /* border-radius: 8px; */
     :hover {
       background: ",
                 "AliceBlue",
@@ -381,7 +377,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-ifAKCX",
+            "styledComponentId": "sc-bxivhb",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -391,7 +387,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-ifAKCX iAfeJP"
+          className="sc-bxivhb gxCHar"
         >
           <CardClass
             content={
@@ -434,12 +430,11 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "$$typeof": Symbol(react.forward_ref),
             "attrs": Array [],
             "componentStyle": ComponentStyle {
-              "componentId": "sc-ifAKCX",
+              "componentId": "sc-bxivhb",
               "isStatic": true,
-              "lastClassName": "iAfeJP",
+              "lastClassName": "gxCHar",
               "rules": Array [
                 "
-    /* border-radius: 8px; */
     :hover {
       background: ",
                 "AliceBlue",
@@ -451,7 +446,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
             "displayName": "styled.div",
             "foldedComponentIds": Array [],
             "render": [Function],
-            "styledComponentId": "sc-ifAKCX",
+            "styledComponentId": "sc-bxivhb",
             "target": "div",
             "toString": [Function],
             "warnTooManyClasses": [Function],
@@ -461,7 +456,7 @@ exports[`ResponsiveCardsRow matches snapshot 1`] = `
         forwardedRef={null}
       >
         <div
-          className="sc-ifAKCX iAfeJP"
+          className="sc-bxivhb gxCHar"
         >
           <CardClass
             content={

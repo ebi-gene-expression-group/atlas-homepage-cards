@@ -20,11 +20,6 @@ describe(`ResponsiveCardsRow`, () => {
     CardClass: () => `topClass`
   }
 
-  test(`displays cards in default row mode`, () => {
-    const wrapper = shallow(<ResponsiveCardsRow {...props}/>)
-    expect(wrapper.find(Slide)).toHaveLength(0)
-  })
-
   test(`displays all cards`, () => {
     expect(shallow(<ResponsiveCardsRow {...props}/>).find(props.CardClass)).toHaveLength(props.cards.length)
   })
