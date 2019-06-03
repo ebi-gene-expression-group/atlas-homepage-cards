@@ -247,7 +247,7 @@ const slideSettings = {
 const render = (options, target) => {
   ReactDOM.render(
     <CarouselCardsRow
-      cards={buildFeaturedExperimentsCards(`https://www.ebi.ac.uk/gxa/`)} // Ideally options.host, but it may be down
+      cards={buildFeaturedExperimentsCards(`https://www.ebi.ac.uk/gxa/`)}
       {...options}
       slideSettings={slideSettings}
     />,
