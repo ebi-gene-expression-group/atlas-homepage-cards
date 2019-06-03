@@ -1,5 +1,5 @@
 import { shallow } from 'enzyme'
-import Slide from 'react-slick'
+import Slider from 'react-slick'
 
 import {
   aRickleInTimeImageCardProps, findingNemoSpeciesCardProps,     // URL in title, no URLs in content
@@ -21,17 +21,17 @@ describe(`CarousleCardsRow`, () => {
   }
 
   test(`displays cards in slider mode if the number of cards is smaller than slides`, () => {
-    const slideSettings = {slidesToShow: props.cards.length - 1}
+    const sliderSettings = {slidesToShow: props.cards.length - 1}
 
-    const wrapper = shallow(<CarouselCardsRow {...props} slideSettings={slideSettings}/>)
-    expect(wrapper).toContainExactlyOneMatchingElement(Slide)
+    const wrapper = shallow(<CarouselCardsRow {...props} sliderSettings={sliderSettings}/>)
+    expect(wrapper).toContainExactlyOneMatchingElement(Slider)
   })
 
   test(`displays cards in slider mode if the number of cards is larger than slides`, () => {
-    const slideSettings = {slidesToShow: props.cards.length + 1}
+    const sliderSettings = {slidesToShow: props.cards.length + 1}
 
-    const wrapper = shallow(<CarouselCardsRow {...props} slideSettings={slideSettings}/>)
-    expect(wrapper).not.toContainMatchingElement(Slide)
+    const wrapper = shallow(<CarouselCardsRow {...props} sliderSettings={sliderSettings}/>)
+    expect(wrapper).not.toContainMatchingElement(Slider)
   })
 
   test(`displays all cards`, () => {
@@ -39,14 +39,14 @@ describe(`CarousleCardsRow`, () => {
   })
 
   test(`matches snapshot with displaying a part of cards in the slider`, () => {
-    const slideSettings = {slidesToShow: props.cards.length - 1}
+    const sliderSettings = {slidesToShow: props.cards.length - 1}
 
-    expect(shallow(<CarouselCardsRow {...props} slideSettings={slideSettings}/>)).toMatchSnapshot()
+    expect(shallow(<CarouselCardsRow {...props} sliderSettings={sliderSettings}/>)).toMatchSnapshot()
   })
 
   test(`matches snapshot with displaying all cards in the slider`, () => {
-    const slideSettings = {slidesToShow: props.cards.length + 1}
+    const sliderSettings = {slidesToShow: props.cards.length + 1}
 
-    expect(shallow(<CarouselCardsRow {...props} slideSettings={slideSettings}/>)).toMatchSnapshot()
+    expect(shallow(<CarouselCardsRow {...props} sliderSettings={sliderSettings}/>)).toMatchSnapshot()
   })
 })
