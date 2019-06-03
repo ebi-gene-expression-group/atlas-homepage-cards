@@ -6,7 +6,7 @@ import {
   theSmithHouseholdImageCardProps, batmanFilmsSpeciesCardProps  // URLs in content, no URL in title
 } from './TestUtils'
 
-import CarouselCardsRow from '../src/CarouselCardsRow'
+import CarouselCardsRow from '../src/carousel/CarouselCardsRow'
 
 describe(`CarousleCardsRow`, () => {
   const props = {
