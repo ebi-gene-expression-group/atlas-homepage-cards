@@ -1,52 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled, { createGlobalStyle } from 'styled-components'
+import styled from 'styled-components'
 
-import cardPropTypes from './modelPropTypes'
-import Card from './Card'
-import Slide from 'react-slick'
+import Slider from 'react-slick'
+
+import cardPropTypes from '../modelPropTypes'
+import Card from '../Card'
+
+import { SlickStyle, SlickThemeStyle } from './SlickGlobalStyles'
 
 const CarouselCardsRow = (props) => {
-  const { CardClass, cards, slideSettings } = props
+  const { CardClass, cards, sliderSettings } = props
   const { className, cardContainerClassName, speciesIconHeight, imageIconHeight, hoverColour } = props
-  const disableSlide = slideSettings.slidesToShow >= cards.length
-  slideSettings.slidesToShow = disableSlide ? cards.length : slideSettings.slidesToShow
+
+  const disableSlider = sliderSettings.slidesToShow >= cards.length
+  sliderSettings.slidesToShow = disableSlider ? cards.length : sliderSettings.slidesToShow
 
   const CardContainer = styled.div`
     :hover {
       background: ${hoverColour};
     }
   `
-
-  const SlideGlobalStyle = createGlobalStyle`
-    .slick-slide img {
-      margin: auto;
-    }
-    .slick-prev:before, .slick-next:before  {
-      font-size: 25px !important;
-    }
-    .slick-prev {
-      left: -24px;
-    }
-    .slick-next {
-      right: -20px;
-    }
-    .slick-slider {
-      height: 300px;
-    }
-    .slick-prev:before {
-      color: #3497c5;
-    }
-    .slick-next:before{
-      color: #3497c5;
-    }
-    .slick-prev:hover {
-      color: #2f5767;
-    }
-    .slick-next:hover{
-      color: #2f5767;
-    }
-`
 
   const cardsDisplay = Array.isArray(cards) && cards.map((card, index) =>
     <CardContainer className={cardContainerClassName} key={index}>
@@ -57,15 +31,16 @@ const CarouselCardsRow = (props) => {
     </CardContainer>)
 
   return (
-    <div className={className} style={{padding:`inherit`, height:`350px`}}>
-      {disableSlide ? cardsDisplay :
-        [
-          <SlideGlobalStyle key={`slidestyle`}/>,
-          <Slide key={`slidecontent`}
-            {...slideSettings}>
+    <div className={className}>
+      {disableSlider ? cardsDisplay :
+        <React.Fragment>
+          <SlickStyle/>
+          <SlickThemeStyle/>
+          <Slider
+            {...sliderSettings}>
             {cardsDisplay}
-          </Slide>
-        ]
+          </Slider>
+        </React.Fragment>
       }
     </div>
   )
@@ -79,7 +54,7 @@ CarouselCardsRow.propTypes = {
   speciesIconHeight: PropTypes.string,
   imageIconHeight: PropTypes.string,
   hoverColour: PropTypes.string,
-  slideSettings: PropTypes.object
+  sliderSettings: PropTypes.object
 }
 
 CarouselCardsRow.defaultProps = {
@@ -89,13 +64,13 @@ CarouselCardsRow.defaultProps = {
   speciesIconHeight: `6rem`,
   imageIconHeight: `2rem`,
   hoverColour: `AliceBlue`,
-  slideSettings: {
+  sliderSettings: {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 6,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 2000
   }
 }
