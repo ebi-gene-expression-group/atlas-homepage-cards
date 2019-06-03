@@ -1,4 +1,4 @@
-import { shallow, mount } from 'enzyme'
+import { shallow } from 'enzyme'
 import Slide from 'react-slick'
 
 import {
