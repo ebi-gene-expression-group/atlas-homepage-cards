@@ -10,6 +10,7 @@ const SlickStyle = createGlobalStyle`
   .slick-slider
   {
     position: relative;
+    height: ${props => props.sliderHeight};
 
     display: block;
     box-sizing: border-box;
@@ -37,7 +38,6 @@ const SlickStyle = createGlobalStyle`
     margin-left: 15px;
     margin-right: 15px;
     padding: 0;
-    min-height: ${props => props.sliderMinHeight};
     
   }
   .slick-list:focus
@@ -273,12 +273,12 @@ const SlickThemeStyle = createGlobalStyle `
 
   .slick-dots
   {
-    /*
+    
     position: absolute;
-    bottom: -25px;
-    */
-    position: relative;
     bottom: -5px;
+    
+    // position: relative;
+    // bottom: -5px;
 
     display: block;
 
