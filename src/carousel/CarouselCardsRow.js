@@ -55,7 +55,9 @@ CarouselCardsRow.propTypes = {
   imageIconHeight: PropTypes.string,
   hoverColour: PropTypes.string,
   sliderSettings: PropTypes.object.isRequired,
+  //To prevent species summary panel's bottom border move up/down when tabs change.
   containerHeight: PropTypes.string,
+  //To prevent slick-slider's bottom dots move up/down when tabs change as adaptiveHeight is applied.
   sliderHeight: PropTypes.string
 }
 
@@ -66,8 +68,8 @@ CarouselCardsRow.defaultProps = {
   speciesIconHeight: `6rem`,
   imageIconHeight: `2rem`,
   hoverColour: `AliceBlue`,
-  containerHeight: `350px`,
-  sliderHeight: `300px`
+  containerHeight: ``,
+  sliderHeight: ``
 }
 
 export default CarouselCardsRow
