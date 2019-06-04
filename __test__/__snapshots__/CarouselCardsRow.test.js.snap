@@ -3,8 +3,15 @@
 exports[`CarousleCardsRow matches snapshot with displaying a part of cards in the slider 1`] = `
 <div
   className=""
+  style={
+    Object {
+      "height": "350px",
+    }
+  }
 >
-  <GlobalStyleComponent />
+  <GlobalStyleComponent
+    sliderMinHeight={true}
+  />
   <GlobalStyleComponent />
   <Slider
     slidesToShow={3}
@@ -201,6 +208,11 @@ exports[`CarousleCardsRow matches snapshot with displaying a part of cards in th
 exports[`CarousleCardsRow matches snapshot with displaying all cards in the slider 1`] = `
 <div
   className=""
+  style={
+    Object {
+      "height": "350px",
+    }
+  }
 >
   <styled.div
     className=""
