@@ -35,7 +35,9 @@ describe(`CarousleCardsRow`, () => {
   })
 
   test(`displays all cards`, () => {
-    expect(shallow(<CarouselCardsRow {...props}/>)).toContainMatchingElements(props.cards.length, props.CardClass);
+    const sliderSettings = {slidesToShow: props.cards.length + 1}
+
+    expect(shallow(<CarouselCardsRow {...props} sliderSettings={sliderSettings}/>)).toContainMatchingElements(props.cards.length, props.CardClass);
   })
 
   test(`matches snapshot with displaying a part of cards in the slider`, () => {

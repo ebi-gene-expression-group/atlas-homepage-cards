@@ -10,7 +10,7 @@ exports[`CarousleCardsRow matches snapshot with displaying a part of cards in th
   }
 >
   <GlobalStyleComponent
-    sliderMinHeight={true}
+    sliderHeight="300px"
   />
   <GlobalStyleComponent />
   <Slider
