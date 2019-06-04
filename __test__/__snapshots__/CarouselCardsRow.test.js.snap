@@ -5,12 +5,12 @@ exports[`CarousleCardsRow matches snapshot with displaying a part of cards in th
   className=""
   style={
     Object {
-      "height": "350px",
+      "height": "",
     }
   }
 >
   <GlobalStyleComponent
-    sliderHeight="300px"
+    sliderHeight=""
   />
   <GlobalStyleComponent />
   <Slider
@@ -210,7 +210,7 @@ exports[`CarousleCardsRow matches snapshot with displaying all cards in the slid
   className=""
   style={
     Object {
-      "height": "350px",
+      "height": "",
     }
   }
 >
