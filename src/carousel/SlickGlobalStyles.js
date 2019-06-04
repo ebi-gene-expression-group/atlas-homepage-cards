@@ -37,6 +37,8 @@ const SlickStyle = createGlobalStyle`
     margin-left: 15px;
     margin-right: 15px;
     padding: 0;
+    min-height: ${props => props.sliderMinHeight};
+    
   }
   .slick-list:focus
   {
