@@ -10,7 +10,7 @@ import Card from '../Card'
 import { SlickStyle, SlickThemeStyle } from './SlickGlobalStyles'
 
 const CarouselCardsRow = (props) => {
-  const { CardClass, cards, sliderSettings, containerHeight, sliderMinHeight } = props
+  const { CardClass, cards, sliderSettings, containerHeight, sliderHeight } = props
   const { className, cardContainerClassName, speciesIconHeight, imageIconHeight, hoverColour} = props
 
   const disableSlider = sliderSettings.slidesToShow >= cards.length
@@ -34,7 +34,7 @@ const CarouselCardsRow = (props) => {
     <div className={className} style={{height: containerHeight}}>
       {disableSlider ? cardsDisplay :
         <React.Fragment>
-          <SlickStyle sliderMinHeight/>
+          <SlickStyle sliderHeight={sliderHeight}/>
           <SlickThemeStyle/>
           <Slider
             {...sliderSettings}>
@@ -54,9 +54,9 @@ CarouselCardsRow.propTypes = {
   speciesIconHeight: PropTypes.string,
   imageIconHeight: PropTypes.string,
   hoverColour: PropTypes.string,
-  sliderSettings: PropTypes.object,
+  sliderSettings: PropTypes.object.isRequired,
   containerHeight: PropTypes.string,
-  sliderMinHeight: PropTypes.string
+  sliderHeight: PropTypes.string
 }
 
 CarouselCardsRow.defaultProps = {
@@ -67,16 +67,7 @@ CarouselCardsRow.defaultProps = {
   imageIconHeight: `2rem`,
   hoverColour: `AliceBlue`,
   containerHeight: `350px`,
-  sliderMinHeight: `300px`,
-  sliderSettings: {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: false,
-    autoplaySpeed: 2000
-  }
+  sliderHeight: `300px`
 }
 
 export default CarouselCardsRow

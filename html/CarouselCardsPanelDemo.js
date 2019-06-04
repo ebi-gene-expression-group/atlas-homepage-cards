@@ -209,12 +209,12 @@ const buildFeaturedExperimentsCards = (host) => {
   ]
 }
 
-const slideSettings = {
+const sliderSettings = {
   dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 6,
-  slidesToScroll: 1,
+  slidesToScroll: 6,
   autoplay: true,
   autoplaySpeed: 2000,
   responsive: [
@@ -249,7 +249,7 @@ const render = (options, target) => {
     <CarouselCardsRow
       cards={buildFeaturedExperimentsCards(`https://www.ebi.ac.uk/gxa/`)}
       {...options}
-      slideSettings={slideSettings}
+      sliderSettings={sliderSettings}
     />,
     document.getElementById(target))
 }
