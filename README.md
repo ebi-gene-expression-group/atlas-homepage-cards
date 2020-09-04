@@ -1,7 +1,6 @@
-# Expression Atlas homepage cards
+# This component has been permanently moved to the [Atlas Components monorepo](https://github.com/ebi-gene-expression-group/atlas-components)
 
-[![Build Status](https://travis-ci.org/ebi-gene-expression-group/atlas-homepage-cards.svg?branch=master)](https://travis-ci.org/ebi-gene-expression-group/atlas-homepage-cards)
-[![Coverage Status](https://coveralls.io/repos/github/ebi-gene-expression-group/atlas-homepage-cards/badge.svg?branch=master)](https://coveralls.io/github/ebi-gene-expression-group/atlas-homepage-cards?branch=master)
+# Expression Atlas homepage cards
 
 ## About the component
 This repository contains a generic React component that renders grids of cards which adhere to the following JSON
